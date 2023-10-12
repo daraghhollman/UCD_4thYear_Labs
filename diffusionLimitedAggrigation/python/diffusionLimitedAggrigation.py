@@ -15,24 +15,6 @@ def main():
     sys.setrecursionlimit(10**6) # Increase recursion limit
     random.seed() # Uses system time as seed
 
-    gridSizeX = gridSizeY = 11
-
-    rectLattice = Grid("Rectangular Lattice")
-
-    rectLattice.InstantiateGrid(gridSizeX, gridSizeY)
-
-    # Create Origin
-    rectLattice.FlipCell(floor(gridSizeX / 2), floor(gridSizeY / 2))
-
-    for i in tqdm(range(10)):
-        rectLattice.AgeCells()
-        rectLattice.AddRandomCell()
-        rectLattice.PlotGrid(figsize=(10, 10))
-        plt.show()
-
-
-
-    return
 
     # note first argument is script path
     if len(sys.argv) == 4:
@@ -58,7 +40,7 @@ def main():
             ax.xaxis.set_major_locator(ticker.MultipleLocator(num))
             ax.yaxis.set_major_locator(ticker.MultipleLocator(num))
 
-            ax.grid()
+            #ax.grid()
 
             plt.show()
 
@@ -173,7 +155,7 @@ class Grid:
         distanceX = abs(i - targetX)
         distanceY = abs(j - targetY)
 
-        distance = floor(np.sqrt(distanceX**2 + distanceY**2))
+        distance = np.sqrt(distanceX**2 + distanceY**2)
         return distance
         
 
@@ -200,7 +182,7 @@ class Grid:
     
     def AddRandomCell(self):
 
-        placementRange = self.FindMaxDistanceFromOrigin() + 2
+        placementRange = floor(self.FindMaxDistanceFromOrigin() + 2)
         
         if placementRange >= len(self.grid[0]) / 2:
             print("Placement circle outside of grid")
@@ -215,7 +197,7 @@ class Grid:
             while j < len(self.grid[i]):
 
                 cellDistance = self.FindCellDistance(i, j, floor(len(self.grid[0])/2), floor(len(self.grid[:,0])/2))
-                if cellDistance == placementRange:
+                if (cellDistance < placementRange + 1) and (cellDistance > placementRange - 1):
                     possibleCoordinates.append((i, j))
 
                 j += 1
