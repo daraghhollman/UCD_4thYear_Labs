@@ -6,11 +6,33 @@ import sys
 
 from tqdm import tqdm
 from math import floor
+from matplotlib.tri import Triangulation
 
 from mpl_toolkits.axes_grid1.axes_divider import make_axes_locatable
 
 rootPath = "/home/daraghhollman/Main/ucd_4thYearLabs/diffusionLimitedAggrigation/data/"
 fileName = "continuedRun"
+
+class Triangle:
+
+    def __init__(self, vertices, index):
+        self.vertices = [vertices[0], vertices[1], vertices[2]]
+        self.neighbours = []
+        self.index = index
+        
+    """
+    def GetNeighbours(self, grid):
+        myX, myY, myZ = (self.vertices[0], self.vertices[1], self.vertices[2])
+
+        for triangle in grid:
+            if triangle.vertices == [myX, myY, myZ]:
+                continue
+
+            elif triangle.vertices == [myX + 1, myY, myZ] or \
+                    triangle.vertices == [myX - 1, myY, myZ]:
+                print("YES")
+    """
+                
 
 
 def main():
@@ -19,6 +41,33 @@ def main():
     random.seed() # Uses system time as seed
 
 
+    # Create Triangle Grid
+    gridSize = 32
+    gridCoordinates = [[row, col] for row in range(gridSize) for col in range(gridSize)]
+
+    gridX = [el[0] for el in gridCoordinates]
+    gridY = [el[1] for el in gridCoordinates]
+
+    grid = Triangulation(gridX, gridY)
+    triangleGrid = grid.triangles
+
+    # Neighbors returns a list containing 3 indices of triangles
+    neighbours = grid.neighbors
+
+    triangles = [Triangle(el, i) for i, el in enumerate(triangleGrid)]
+
+    for i, tri in enumerate(triangles):
+        for neighbour in neighbours[i]:
+            tri.neighbours.append(triangles[neighbour])
+
+    
+
+    plt.tripcolor(gridX, gridY, triangleGrid, [np.mean(el.vertices) for el in triangles])
+
+    plt.show()
+    
+    return
+    
     # note first argument is script path
     if len(sys.argv) == 4:
         command = str(sys.argv[1])
