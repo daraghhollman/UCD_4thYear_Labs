@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import random
@@ -13,6 +14,8 @@ sys.path.insert(1, './python')
 
 from diffusionLimitedAggrigation_hexagonal import Hex, HexGrid
 
+mpl.rcParams.update({'font.size': 16})
+
 rootPath = "/home/daraghhollman/Main/ucd_4thYearLabs/diffusionLimitedAggrigation/data/"
 fileName = "continuedRun"
 
@@ -21,6 +24,9 @@ def main():
 
     sys.setrecursionlimit(10**6) # Increase recursion limit
     random.seed() # Uses system time as seed
+
+    #GetPlacementProbability(1000)
+    #return
 
     hex = False
 
@@ -68,6 +74,7 @@ def PlotRun(filePath, hex=False):
 
     return ax
 
+
 def NewRun(filePath, gridSize, hex=False):
 
     gridSizeX = gridSizeY = gridSize
@@ -90,6 +97,7 @@ def NewRun(filePath, gridSize, hex=False):
         #rectLattice.PlotGrid(figsize=(10, 10))
 
     np.save(filePath, lattice.grid, allow_pickle=True)
+
 
 def ReloadRun(filePath, steps, hex=False):
 
@@ -154,6 +162,8 @@ class Grid:
 
         ax.set_xlabel("X [Cell Width]")
         ax.set_ylabel("Y [Cell Width]")
+
+        ax.set_aspect("equal")
 
         return ax
 
@@ -266,8 +276,6 @@ class Grid:
 
             # Do movement and repeat
             newCoordinates = (initialCoordinates[0] + movement[0], initialCoordinates[1] + movement[1])
-
-            # check if new position is outside bounds
 
             #print(f"Current pos: {initialCoordinates}, New pos: {newCoordinates}", end="\r")
 
