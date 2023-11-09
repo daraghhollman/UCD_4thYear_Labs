@@ -1,0 +1,10 @@
+frequency (Hz), spacing (mm), spacingUncertainty (mm)
+50 10 1
+60 11 1
+70 13 1
+80 14 1
+90 16 1
+100 17 1
+110 18 1
+120 18 1
+130 19 1
