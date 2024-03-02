@@ -1,0 +1,508 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.2)  2 MAR 2024 14:14
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**aps_report.tex
+(./aps_report.tex
+LaTeX2e <2023-06-01> patch level 1
+L3 programming layer <2023-06-30>
+(/usr/local/texlive/2023/texmf-dist/tex/latex/revtex/revtex4-2.cls
+Document Class: revtex4-2 2022/06/05 4.2f (https://journals.aps.org/revtex/ for documentation)
+ Copyright (c) 2019 American Physical Society.
+ mailto:revtex@aps.org
+ Licensed under the LPPL:
+http://www.ctan.org/tex-archive/macros/latex/base/lppl.txt
+ Arthur Ogawa <arthur_ogawa at sbcglobal dot net>
+ Based on work by David Carlisle <david at dcarlisle.demon.co.uk>
+ Version (4.2d--4.2f): Modified by Mark Doyle and Phelype Oleinik
+ .
+ltxutil[2022/06/05 4.2f utilities package (portions licensed from W. E. Baxter web at superscript.com)]
+LaTeX Info: Redefining \@centercr on input line 356.
+Class revtex4-2 Info: Repairing broken LaTeX eqnarray on input line 417.
+\eqncolsep=\skip48
+Class revtex4-2 Info: Repairing hyperref-unfriendly LaTeX definition of \mpfootnote on input line 492.
+Class revtex4-2 Info: Repairing broken LateX \@sect on input line 814.
+\intertabularlinepenalty=\count185
+\@tbpen=\count186
+\@arstrutbox@hline=\box51
+Class revtex4-2 Info: Repairing broken LaTeX \@xbitor on input line 1845.
+Class revtex4-2 Info: Making \typeout \long on input line 2110.
+ltxfront[2022/06/05 4.2f frontmatter package (AO,DPC,MD)]
+\c@affil=\count187
+\c@collab=\count188
+\absbox=\box52
+ltxgrid[2022/06/05 4.2f page grid package (portions licensed from W. E. Baxter web at superscript.com)]
+\c@linecount=\count189
+\output@latex=\toks17
+\box@size@1=\box53
+\box@size@2=\box54
+\@protection@box=\box55
+\@topmark@saved=\toks18
+\footins@saved=\box56
+\footins@recovered=\box57
+\column@recovered=\box58
+\pagesofar=\box59
+\footsofar=\box60
+\pagegrid@col=\count190
+Class revtex4-2 Info: Overriding \@vspace, \@vspacer, \@no@pgbk, \@newline, and \\  on input line 5676.
+\c@part=\count191
+\c@section=\count192
+\c@subsection=\count193
+\c@subsubsection=\count194
+\c@paragraph=\count195
+\c@subparagraph=\count196
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\c@figure=\count197
+\fbox@1=\box61
+\c@table=\count198
+\fbox@2=\box62
+\c@video=\count199
+\fbox@4=\box63
+\@bibdataout=\write3
+\widetext@top=\box64
+\widetext@bot=\box65
+Class revtex4-2 Info: Selecting society aps on input line 7669.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/revtex/aps4-2.rtx
+File: aps4-2 2022/06/05 4.2f (https://journals.aps.org/revtex/ for documentation)
+Class revtex4-2 Info: RevTeX society APS selected on input line 40.
+)
+
+Class revtex4-2 Warning: No journal specified, using default pra.
+
+Class revtex4-2 Info: APS journal PRA selected on input line 7672.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/revtex/aps10pt4-2.rtx
+File: aps10pt4-2 2022/06/05 4.2f (https://journals.aps.org/revtex/ for documentation)
+Class revtex4-2 Info: RevTeX pointsize 10pt selected on input line 39.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/textcase/textcase.sty
+Package: textcase 2023/07/27 v1.04 Text only upper/lower case changing (DPC)
+Package textcase Info: Defining Legacy names on input line 20.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks19
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks20
+\ex@=\dimen140
+)
+LaTeX Info: Redefining \text on input line 28.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen141
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count266
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count267
+\leftroot@=\count268
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count269
+\DOTSCASE@=\count270
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box66
+\strutbox@=\box67
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen142
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count271
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count272
+\dotsspace@=\muskip16
+\c@parentequation=\count273
+\dspbrk@lvl=\count274
+\tag@help=\toks21
+\row@=\count275
+\column@=\count276
+\maxfields@=\count277
+\andhelp@=\toks22
+\eqnshift@=\dimen143
+\alignsep@=\dimen144
+\tagshift@=\dimen145
+\tagwidth@=\dimen146
+\totwidth@=\dimen147
+\lineht@=\dimen148
+\@envbody=\toks23
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip54
+\bibsep=\skip55
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count278
+)
+Class revtex4-2 Info: Repairing natbib's \BibitemShut on input line 7676.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/revtex/revsymb4-2.sty
+Package: revsymb4-2 2022/06/05 4.2f (https://journals.aps.org/revtex/ for documentation)
+LaTeX Info: Redefining \frak on input line 104.
+LaTeX Info: Redefining \Bbb on input line 120.
+LaTeX Info: Redefining \REV@mathfrak on input line 128.
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks25
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/dcolumn.sty
+Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen151
+\ar@mcellbox=\box68
+\extrarowheight=\dimen152
+\NC@list=\toks26
+\extratabsurround=\skip56
+\backup@length=\skip57
+\ar@cellbox=\box69
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2022/01/05 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+LaTeX Info: Redefining \bm on input line 219.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/07/31 v3.6n Customizing captions (AR)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen153
+\captionmargin=\dimen154
+\caption@leftmargin=\dimen155
+\caption@rightmargin=\dimen156
+\caption@width=\dimen157
+\caption@indent=\dimen158
+\caption@parindent=\dimen159
+\caption@hangindent=\dimen160
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\par \vskip \abovecaptionskip \begingroup \small \rmfamily \sbox \@tempboxa {\let \\\heading@cr \@make@capt@title {#1}{#2}}\@ifdim {\wd \@tempboxa >\hsize }{\begingroup \samepage \flushing \let \footnote \@footnotemark@gobble \@make@capt@title {#1}{#2}\par \endgroup }{\global \@minipagefalse \hb@xt@ \hsize {\hfil \unhbox \@tempboxa \hfil }}\endgroup \vskip \belowcaptionskip  on input line 1170.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count279
+\c@continuedfloat=\count280
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen161
+\lightrulewidth=\dimen162
+\cmidrulewidth=\dimen163
+\belowrulesep=\dimen164
+\belowbottomsep=\dimen165
+\aboverulesep=\dimen166
+\abovetopsep=\dimen167
+\cmidrulesep=\dimen168
+\cmidrulekern=\dimen169
+\defaultaddspace=\dimen170
+\@cmidla=\count281
+\@cmidlb=\count282
+\@aboverulesep=\dimen171
+\@belowrulesep=\dimen172
+\@thisruleclass=\count283
+\@lastruleclass=\count284
+\@thisrulewidth=\dimen173
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip58
+\subfigcapskip=\skip59
+\subfigcaptopadj=\dimen174
+\subfigbottomskip=\skip60
+\subfigcapmargin=\dimen175
+\subfiglabelskip=\skip61
+\c@subfigure=\count285
+\c@lofdepth=\count286
+\c@subtable=\count287
+\c@lotdepth=\count288
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2023/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip62
+\subfig@bottom=\skip63
+)
+Class revtex4-2 Info: Unrecognized array package. Please update this document class! (Proceeding with fingers crossed.) on input line 61.
+Class revtex4-2 Info: cite was not loaded (OK!) on input line 61.
+Class revtex4-2 Info: mcite was not loaded (OK!) on input line 61.
+Class revtex4-2 Info: multicol was not loaded (OK!) on input line 61.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count289
+\l__pdf_internal_box=\box70
+) (./aps_report.aux)
+\openout1 = `aps_report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+ (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count290
+\scratchdimen=\dimen176
+\scratchbox=\box71
+\nofMPsegments=\count291
+\nofMParguments=\count292
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count293
+\MPscratchDim=\dimen177
+\MPnumerator=\count294
+\makeMPintoPDFobject=\count295
+\everyMPtoPDFconversion=\toks28
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfigure package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\openout3 = `aps_reportNotes.bib'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
+<Images/pwm.png, id=1, 441.65pt x 294.09875pt>
+File: Images/pwm.png Graphic file (type png)
+<use Images/pwm.png>
+Package pdftex.def Info: Images/pwm.png  used on input line 87.
+(pdftex.def)             Requested size: 221.3985pt x 147.43045pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 95.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 95.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 4940) in paragraph at lines 95--96
+\OT1/cmr/m/n/10 cro-con-troller with multi-function dig-i-tal I/O pins
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+\OT1/cmr/m/n/10 at $\OT1/cmtt/m/n/10 https : / / www . raspberrypi . com / documentation /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+
+ []
+
+
+Underfull \hbox (badness 1831) in paragraph at lines 97--98
+\OT1/cmr/m/n/10 men-ta-tion of Python 3 de-signed to run op-ti-mally
+ []
+
+
+Underfull \hbox (badness 3735) in paragraph at lines 97--98
+\OT1/cmr/m/n/10 on mi-cro-con-trollers and other small or oth-er-wise
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+
+ []
+
+<Images/constFreq.png, id=2, 463.9734pt x 348.3414pt>
+File: Images/constFreq.png Graphic file (type png)
+<use Images/constFreq.png>
+Package pdftex.def Info: Images/constFreq.png  used on input line 105.
+(pdftex.def)             Requested size: 221.3985pt x 166.21864pt.
+<Images/constDuty.png, id=4, 463.9734pt x 348.3414pt>
+File: Images/constDuty.png Graphic file (type png)
+<use Images/constDuty.png>
+Package pdftex.def Info: Images/constDuty.png  used on input line 109.
+(pdftex.def)             Requested size: 221.3985pt x 166.21864pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+[1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Images/pwm.png>]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 114.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+
+ []
+
+
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 122.
+
+(./aps_report.bbl [2 <./Images/constFreq.png> <./Images/constDuty.png>] [3]
+Underfull \hbox (badness 2080) in paragraph at lines 4--8
+ []\OT1/cmr/m/n/9 BARR Group.  In-tro-duc-tion to pulse width mod-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
+ \OT1/cmr/m/n/9 u-la-tion (pwm).  $\OT1/cmtt/m/n/9 https : / / barrgroup . com / blog /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
+ \OT1/cmtt/m/n/9 introduction-[]pulse-[]width-[]modulation-[]pwm$\OT1/cmr/m/n/9 , 2001.
+ []
+
+
+Underfull \hbox (badness 5607) in paragraph at lines 15--19
+ []\OT1/cmr/m/n/9 John Mar-con.  Un-der-stand-ing pwm trans-mit-ters.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--19
+ \OT1/cmtt/m/n/9 https : / / www . radioworld . com / tech-[]and-[]gear /
+ []
+
+
+Underfull \hbox (badness 3000) in paragraph at lines 15--19
+ \OT1/cmtt/m/n/9 understanding-[]pwm-[]transmitters$\OT1/cmr/m/n/9 , 2017.  Ac-cessed:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--25
+ []\OT1/cmr/m/n/9 Raspberry Pi.  Rasp-berry pi doc-u-men-ta-tion:
+ []
+
+
+Underfull \hbox (badness 6477) in paragraph at lines 21--25
+ \OT1/cmr/m/n/9 Rasp-berry pi pico and pico w.  $\OT1/cmtt/m/n/9 https : / / www .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--25
+ \OT1/cmtt/m/n/9 raspberrypi . com / documentation / microcontrollers /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--31
+ []\OT1/cmr/m/n/9 Damien P. George.  Mi-cropy-thon.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--42
+ \OT1/cmtt/m/n/9 https : / / www . intel . com / content / www / us / en / gaming /
+ []
+
+
+Underfull \hbox (badness 1558) in paragraph at lines 38--42
+ \OT1/cmtt/m/n/9 resources / highest-[]refresh-[]rate-[]gaming . html$\OT1/cmr/m/n/9 .  Ac-
+ []
+
+) [4]
+<Images/Pico-R3-A4-Pinout.pdf, id=37, 845.0471pt x 597.50829pt>
+File: Images/Pico-R3-A4-Pinout.pdf Graphic file (type pdf)
+<use Images/Pico-R3-A4-Pinout.pdf>
+Package pdftex.def Info: Images/Pico-R3-A4-Pinout.pdf  used on input line 161.
+(pdftex.def)             Requested size: 510.0pt x 360.60469pt.
+<Images/linearLogBrightness.pdf, id=38, 597.23125pt x 845.1575pt>
+File: Images/linearLogBrightness.pdf Graphic file (type pdf)
+<use Images/linearLogBrightness.pdf>
+Package pdftex.def Info: Images/linearLogBrightness.pdf  used on input line 166.
+(pdftex.def)             Requested size: 510.0pt x 721.72736pt.
+
+
+LaTeX Warning: Float too large for page by 49.72736pt on input line 167.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5 <./Images/Pico-R3-A4-Pinout.pdf>] [6 <./Images/linearLogBrightness.pdf>] [7] (./aps_report.aux)
+ ***********
+LaTeX2e <2023-06-01> patch level 1
+L3 programming layer <2023-06-30>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 6416 strings out of 475237
+ 97930 string characters out of 5764559
+ 1935244 words of memory out of 5000000
+ 27596 multiletter control sequences out of 15000+600000
+ 569405 words of font info for 78 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 71i,8n,79p,1312b,436s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on aps_report.pdf (7 pages, 626449 bytes).
+PDF statistics:
+ 157 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+

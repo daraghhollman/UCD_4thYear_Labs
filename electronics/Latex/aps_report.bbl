@@ -1,0 +1,48 @@
+\begin{thebibliography}{1}
+
+\bibitem{barr}
+BARR Group.
+\newblock Introduction to pulse width modulation (pwm).
+\newblock \url{https://barrgroup.com/blog/introduction-pulse-width-modulation-pwm}, 2001.
+\newblock Accessed: 2024-03-02.
+
+\bibitem{ucd}
+UCD~School of~Physics.
+\newblock 555 timer \& raspberry pi pico pulse-width modulation, 2022.
+\newblock Accessed: 2024-03-02.
+
+\bibitem{radioworld}
+John Marcon.
+\newblock Understanding pwm transmitters.
+\newblock \url{https://www.radioworld.com/tech-and-gear/understanding-pwm-transmitters}, 2017.
+\newblock Accessed: 2024-03-02.
+
+\bibitem{Pi}
+Raspberry Pi.
+\newblock Raspberry pi documentation: Raspberry pi pico and pico w.
+\newblock \url{https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html}.
+\newblock Accessed: 2024-03-02.
+
+\bibitem{micropython}
+Damien~P. George.
+\newblock Micropython.
+\newblock https://micropython.org/.
+\newblock Accessed: 2024-03-02.
+
+\bibitem{potter_2014}
+Mary~C. Potter, Brad Wyble, Carl~E. Hagmann, and Emily~S. McCourt.
+\newblock Detecting meaning in rsvp at 13 ms per picture.
+\newblock {\em Attention, Perception and Psychophysics}, 76(2):270--9, 02 2014.
+
+\bibitem{refresh}
+Intel.
+\newblock What is refresh rate and why is it important.
+\newblock \url{https://www.intel.com/content/www/us/en/gaming/resources/highest-refresh-rate-gaming.html}.
+\newblock Accessed: 2024-03-02.
+
+\bibitem{maes_2021}
+Christian Maes.
+\newblock Statistical mechanical foundation of weber–fechner laws.
+\newblock {\em Journal of statistical physics}, 182(3), 2021.
+
+\end{thebibliography}
