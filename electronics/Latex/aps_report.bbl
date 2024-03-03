@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{barr}
 BARR Group.
@@ -44,5 +44,16 @@ Intel.
 Christian Maes.
 \newblock Statistical mechanical foundation of weber–fechner laws.
 \newblock {\em Journal of statistical physics}, 182(3), 2021.
+
+\bibitem{horowitz}
+Paul Horowitz and Winfield Hill.
+\newblock {\em {The art of electronics; 3rd ed.}}
+\newblock Cambridge University Press, Cambridge, 2015.
+
+\bibitem{unityGain}
+eCircuit Center.
+\newblock Rc low-pass filter with op amp buffer.
+\newblock \url{http://www.ecircuitcenter.com/Circuits/opfil1/opfil1.htm}, 2010.
+\newblock Accessed: 2024-03-02.
 
 \end{thebibliography}

@@ -4,44 +4,44 @@ The top-level auxiliary file: aps_report.aux
 The style file: unsrt.bst
 Database file #1: aps_reportNotes.bib
 Database file #2: aps_references.bib
-You've used 8 entries,
+You've used 10 entries,
             1791 wiz_defined-function locations,
-            488 strings with 4582 characters,
-and the built_in function-call counts, 1203 in all, are:
-= -- 103
-> -- 42
+            500 strings with 4831 characters,
+and the built_in function-call counts, 1511 in all, are:
+= -- 130
+> -- 54
 < -- 0
-+ -- 19
-- -- 11
-* -- 35
-:= -- 200
-add.period$ -- 29
-call.type$ -- 8
-change.case$ -- 8
++ -- 24
+- -- 14
+* -- 42
+:= -- 251
+add.period$ -- 36
+call.type$ -- 10
+change.case$ -- 9
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 47
-empty$ -- 146
-format.name$ -- 11
-if$ -- 275
+cite$ -- 10
+duplicate$ -- 62
+empty$ -- 183
+format.name$ -- 14
+if$ -- 348
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 2
-newline$ -- 48
-num.names$ -- 8
-pop$ -- 42
+int.to.str$ -- 10
+missing$ -- 4
+newline$ -- 59
+num.names$ -- 10
+pop$ -- 54
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 20
+skip$ -- 24
 stack$ -- 0
 substring$ -- 15
-swap$ -- 8
+swap$ -- 10
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 9
-width$ -- 9
-write$ -- 91
+while$ -- 11
+width$ -- 12
+write$ -- 114

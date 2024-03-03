@@ -18,22 +18,35 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Examples of difference duty cycles for a square wave \cite  {ucd}.}}{1}{}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:PWM}{{1}{1}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A}Basics}{1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}PWM Basics and Applications to Varying LED Brightness}{1}{}}
 \citation{maes_2021}
-\bibdata{aps_reportNotes,aps_references}
+\citation{ucd}
+\citation{ucd}
+\citation{horowitz}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces PWM output from the Pi Pico showing variations in duty for a constant frequency of $1000 \,\text  {Hz}$}}{2}{}}
 \newlabel{fig:constFreq}{{2}{2}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces PWM output from the Pi Pico showing variations in frequency for a constant duty of $\approx 50$\% (i.e. $65535/2 \approx 32768$, rounding to an integer value.)}}{2}{}}
 \newlabel{fig:constDuty}{{3}{2}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B}Simple DAC}{3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}Simple DAC}{2}{}}
+\citation{unityGain}
+\citation{unityGain}
+\citation{ucd}
+\citation{ucd}
+\citation{ucd}
+\bibdata{aps_reportNotes,aps_references}
 \@writefile{toc}{\contentsline {subsection}{\numberline {C}Generating Analogue Output Functions}{3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A low pass filter to convert the PWM input to an analogue output \cite  {ucd}. Note a Pi Pico is used in our case instead of an Arduino, however the principles remain the same.}}{3}{}}
+\newlabel{fig:DAC}{{4}{3}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces  The output from the simple DAC with a PWM input of $20\,\text  {kHz}$ and $R=270\,\Omega $, $C=0.1\,\mu \text  {F}$}}{3}{}}
+\newlabel{fig:dacVariations}{{5}{3}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Triangular Signal}{3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Sine Wave}{3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {III}555 Timer}{3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A}555 Timer as an Astable Oscillator}{3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Simulations}{3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Circuit Construction}{3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B}Designing a Time-To-Amplitude Converter utilising the 555 Timer}{3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Sine Wave}{4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Accounting for Processing Time}{4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}555 Timer}{4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}555 Timer as an Astable Oscillator}{4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Simulations}{4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Circuit Construction}{4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}Designing a Time-To-Amplitude Converter utilising the 555 Timer}{4}{}}
 \bibcite{barr}{{1}{}{{}}{{}}}
 \bibcite{ucd}{{2}{}{{}}{{}}}
 \bibcite{radioworld}{{3}{}{{}}{{}}}
@@ -42,13 +55,16 @@
 \bibcite{potter_2014}{{6}{}{{}}{{}}}
 \bibcite{refresh}{{7}{}{{}}{{}}}
 \bibcite{maes_2021}{{8}{}{{}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {}References}{4}{}}
-\newlabel{LastBibItem}{{8}{4}{}{}{}}
+\bibcite{horowitz}{{9}{}{{}}{{}}}
+\bibcite{unityGain}{{10}{}{{}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {}References}{5}{}}
+\newlabel{LastBibItem}{{10}{5}{}{}{}}
 \@writefile{toc}{\appendix }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Pi Pico Pin Diagram}{5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Linear / Log Brightness Script}{5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Pi Pico Pin Diagram}{6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Linear / Log Brightness Script}{6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Function Generator Script}{8}{}}
 \bibstyle{unsrt}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\@writefile{toc}{\contentsline {section}{\numberline {C}Python Notebook}{7}{}}
-\newlabel{LastPage}{{}{7}{}{}{}}
-\gdef \@abspage@last{7}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Python Notebook}{10}{}}
+\newlabel{LastPage}{{}{10}{}{}{}}
+\gdef \@abspage@last{10}

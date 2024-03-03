@@ -92,13 +92,13 @@
 
 
 \section{PWM with a Raspberry Pi Pico}
-The Raspberry Pi Pico is a high-performance microcontroller with multi-function digital I/O pins \cite{Pi, ucd}. PWM is one of these functions. A pin diagram along with full documentation can be found at \url{https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html} \cite{Pi}. For ease of reading, this pin diagram is also included in appendix 1.\\
+The Raspberry Pi Pico is a high-performance microcontroller with multi-function digital I/O pins \cite{Pi, ucd}. PWM is one of these functions. A pin diagram along with full documentation can be found at \url{https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html} \cite{Pi}. For ease of reading, this pin diagram is also included in appendix A.\\
 
 The Pi Pico can be programmed using an implementation of Python 3 designed to run optimally on microcontrollers and other small or otherwise constrained environments called MicroPython \cite{micropython}. MicroPython contains the \textsc{machine} library from which the \textsc{PWM} function can be used to generate a PWM output on a designated pin. The frequency of the PWM can be set up to frequencies beyond $1\,\text{MHz}$, however in this lab we only use up to a maximum $100 \,\text{kHz}$ \cite{ucd}. The duty cycle can be set to an integer value between $0$ and $65535$ (the 16-bit binary maximum), with the ratio of this value and the maximum yielding the ratio the signal will be on compared to off.\\
 
 In this section, we first verify the PWM generation from the Pi Pico behaves as expected, and then design scripts to adjust the brightness of the inbuilt LED on the microcontroller. Following this, the combination of the PWM output and a low pass filter will be used to create a simple Digital-To-Analogue Converter (DAC). Lastly, the generation of analogue signals will be described and demonstrated for a triangle and sine wave.
     
-    \subsection{Basics}
+    \subsection{PWM Basics and Applications to Varying LED Brightness}
     To first verify the PWM output from the Pi Pico, a simple script was written to output PWM for a constant frequency and duty. The output of this pin was measured with an oscilloscope and recorded for several duty values with a constant frequency, and also for several frequency values for a constant duty value. Variations in duty are plotted in figure \ref{fig:constFreq}, and variations in frequency are plotted in figure \ref{fig:constDuty}. We can see that the PWM output is what is expected by comparison with figure \ref{fig:PWM}. Frequency adjusts the frequency of the square wave output as a whole, while duty adjusts the amount the square wave is on compared to off.\\
 
     \begin{figure}
@@ -119,21 +119,57 @@ In this section, we first verify the PWM generation from the Pi Pico behaves as 
 
     Observing the LED it is clear that while the brightness value is being incremented linearly, the light does not appear to change linearly in brightness. It appears to stay brighter for longer than it is dimmer. This is however expected, as we know that the human eye has a logarithmic response to changes in light intensity. This phenomenon is part of what is known as the Weber-Fechner Laws \cite{maes_2021}. We can adjust for this, by increasing and decreasing the brightness linearly in log-space. This was not fully achieved for this exercise but a close approximation was implemented which was functionally similar. The brightness was increased with the following equation:
     \begin{equation}
-        10^{t} \over 10
+        \frac{10^{t}}{10}
     \end{equation}and decreased with:
     \begin{equation}
-        10^{-(t+1)} \over 10
-    \end{equation}where $t$ is the position along the respective half of the 200 step cycle from $0$ to $1$, i.e. $i/100$ where $i$ is the step number. While effective in producing a increase linear in log space, these equations do have the drawback of their bounds. The minimum value, corresponding to $t=0$ for each is only at $10$\% of the maximum brightness, and as such the LED will never reach the fully off state. Despite the constraints on the range, the LED was observed to range between the two brightness values linearly (to the eye). The script for producing both of these effects is included in appendix 2.
+        \frac{10^{-(t+1)}}{10}
+    \end{equation}where $t$ is the position along the respective half of the 200 step cycle from $0$ to $1$, i.e. $i/100$ where $i$ is the step number. While effective in producing a increase linear in log space, these equations do have the drawback of their bounds. The minimum value, corresponding to $t=0$ for each is only at $10$\% of the maximum brightness, and as such the LED will never reach the fully off state. Despite the constraints on the range, the LED was observed to range between the two brightness values linearly (to the eye). The script for producing both of these effects is included in appendix B.
 
-
+    
     \subsection{Simple DAC}
+    A digital-to-analogue converter (DAC) can be created by passing the PWM output to a low pass filter. The low pass filter acts to attenuate the frequency component of the signal to leave solely the averaged PWM signal as the analogue output \cite{ucd}. The diagram for such a setup is shown in figure \ref{fig:DAC} \cite{ucd}. In a low pass filter the resistance $R$ and capacitance $C$ define the cut-off frequency $f_c$ by the following relation \cite{horowitz}:
+    \begin{equation}
+        f_c = \frac{1}{2\pi R C}
+    \end{equation}At this cut-off frequency, a signal with that frequency has attenuated by $-3 \,\text{dB}$, and further frequencies beyond this cut-off will attenuate at a rate of $-20\,\text{dB}$ per decade. PWM inputs with signal frequencies below this cut-off frequency will be mostly unattenuated and the output will not be smooth. It is then difficult to use high PWM frequencies as the input for the DAC, as larger resistors and capacitors will be needed to increase the cut-off frequency to provide the same attennuating effect.\\
+
+    Given a test input PWM signal of $20\,\text{kHz}$ and a $50$\% duty, a combination of R and C was found to produce a signal with less than $5$\% variation. To have less than $5$\% variation, we need to attenuate the signal by a factor of $1/20$. Coverting this to decibels we have:
+    \begin{align}
+        \text{dB} &= 10 \log_{10}\left( \frac{\text{Signal In}}{\text{Signal Out}} \right)\\
+                  &= 10 \log_{10}\left( 20 \right)\nonumber\\
+                  &\approx 13 \,\text{dB}\nonumber
+    \end{align}hence we must reduce the signal by $13\,\text{dB}$ to achieve this. Based on attenuation slope of $-20\,\text{dB}$ per decade we reach this attentuation for frequencies $1.5 \cdot f_c$. Therefore, for a PWM frequency of $20\,\text{kHz}$, we require a cut-off frequency:
+    \begin{equation}
+        f_c \le \frac{20\,\text{kHz}}{1.5} \approx 13 \text{kHz}
+    \end{equation}To achieve this, a combination of $R=270\,\Omega$ and $C=0.1\,\mu\text{F}$, yielding $f_c\approx5.9\,\text{kHz}$ was chosen based on the components available. NEED TO TAKE LAB DATA FOR THIS. This output was verified using the oscilloscope and plotted in figure \ref{fig:dacVariation}.\\
+
+    It is important that this circuit not be used unbuffered. The output signal from the DAC circuit when connected to another circuit will affect the total resistance of the DAC circuit. The change in RC will cause the cut-off frequency to change, producing an unwanted response from the DAC. This can be ammended using a unity gain op-amp to buffer the output signal. A unity gain op-amp is an op-amp circuit which has a voltage gain of 1, meaning the input and output signals are equal voltage \cite{unityGain}. However, one useful property of op-amps for this application is that they typically have very high impeadence, and hence, will not draw a significant current from the DAC circuit. The total resistance and hence the RC value will remain unchanged \cite{unityGain}.
+
+
+    \begin{figure}
+        \includegraphics[width=0.9\columnwidth]{Images/dac.png}
+        \caption{\label{fig:DAC}A low pass filter to convert the PWM input to an analogue output \cite{ucd}. Note a Pi Pico is used in our case instead of an Arduino, however the principles remain the same.}
+    \end{figure}
+    \begin{figure}
+        \includegraphics[width=0.9\columnwidth]{Images/dacVariations.png}
+        \caption{\label{fig:dacVariations} The output from the simple DAC with a PWM input of $20\,\text{kHz}$ and $R=270\,\Omega$, $C=0.1\,\mu\text{F}$}
+    \end{figure}
 
     \subsection{Generating Analogue Output Functions}
+    The combination of the above DAC circuit (to provide an analogue output) and varying the PWM duty cycle (to set the analogue DC level) allows for the creation of specific functions such as a triangular and sine function. This is possible through changing the PWM duty in discrete steps over a cycle \cite{ucd}. A script was written to vary the duty similarly to section II.A. instead this time adjusting the duty according to a custom function for a triangular signal or a sine wave. The full script is available in appendix C.
 
         \subsubsection{Triangular Signal}
+        A triangular signal was generated through the use of a piecewise function:
+        \[T(i) = 
+        \begin{cases}
+            \frac{2i}{N} & i < \frac{N}{2}\\
+            -\frac{2i}{N} + 2 & i \ge \frac{N}{2}
+        \end{cases}
+        \]
+        where $i$ is the step along the function with $N$ steps.
 
         \subsubsection{Sine Wave}
 
+        \subsubsection{Accounting for Processing Time}
 
 \section{555 Timer}
     
@@ -164,6 +200,13 @@ In this section, we first verify the PWM generation from the Pi Pico behaves as 
 \section{Linear / Log Brightness Script}
     \begin{figure}[h]
         \includegraphics[width=\columnwidth]{Images/linearLogBrightness.pdf}
+    \end{figure}
+
+\clearpage
+
+\section{Function Generator Script}
+    \begin{figure}[h]
+        \includegraphics[width=\columnwidth]{Images/functionGenerator.pdf}
     \end{figure}
 
 

@@ -24,7 +24,7 @@ correctionValue = [900, 400, 250, 150, 30, 25, 25]
 
 # Delay correction function
 def DelayCorrectionFunction(numberOfSteps):
-    # Values determined using scipy's curve_fit and the above tables
+    # Values determined using scipy's curve_fit and the above table of correction values
     return round(3799.4 * math.exp(-0.14904 * numberOfSteps)  + 25)
 
 delayCorrection = DelayCorrectionFunction(numSteps) # us, subtacted from the delay of each step
@@ -79,4 +79,3 @@ def CycleDuties(dutyPercents, delay, delayCorrection):
             sleep_us(delay - delayCorrection)
 
 CycleDuties(dutyValues, round(delay), delayCorrection)
-        
