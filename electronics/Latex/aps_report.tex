@@ -142,7 +142,7 @@ In this section, we first verify the PWM generation from the Pi Pico behaves as 
         f_c \le \frac{20\,\text{kHz}}{1.5} \approx 13 \text{kHz}
     \end{equation}To achieve this, a combination of $R=270\,\Omega$ and $C=0.1\,\mu\text{F}$, yielding $f_c\approx5.9\,\text{kHz}$ was chosen based on the components available. NEED TO TAKE LAB DATA FOR THIS. This output was verified using the oscilloscope and plotted in figure \ref{fig:dacVariation}.\\
 
-    It is important that this circuit not be used unbuffered. The output signal from the DAC circuit when connected to another circuit will affect the total resistance of the DAC circuit. The change in RC will cause the cut-off frequency to change, producing an unwanted response from the DAC. This can be ammended using a unity gain op-amp to buffer the output signal. A unity gain op-amp is an op-amp circuit which has a voltage gain of 1, meaning the input and output signals are equal voltage \cite{unityGain}. However, one useful property of op-amps for this application is that they typically have very high impeadence, and hence, will not draw a significant current from the DAC circuit. The total resistance and hence the RC value will remain unchanged \cite{unityGain}.
+    It is important that this circuit not be used unbuffered. The output signal from the DAC circuit when connected to another circuit will affect the total resistance of the DAC circuit. The change in RC will cause the cut-off frequency to change, producing an unwanted response from the DAC. This can be amended using a unity gain op-amp to buffer the output signal. A unity gain op-amp is an op-amp circuit which has a voltage gain of 1, meaning the input and output signals are equal voltage \cite{unityGain}. However, one useful property of op-amps for this application is that they typically have very high impedence, and hence, will not draw a significant current from the DAC circuit. The total resistance and hence the RC value will remain unchanged \cite{unityGain}.
 
 
     \begin{figure}
@@ -155,9 +155,19 @@ In this section, we first verify the PWM generation from the Pi Pico behaves as 
     \end{figure}
 
     \subsection{Generating Analogue Output Functions}
-    The combination of the above DAC circuit (to provide an analogue output) and varying the PWM duty cycle (to set the analogue DC level) allows for the creation of specific functions such as a triangular and sine function. This is possible through changing the PWM duty in discrete steps over a cycle \cite{ucd}. A script was written to vary the duty similarly to section II.A. instead this time adjusting the duty according to a custom function for a triangular signal or a sine wave. The full script is available in appendix C.
+    The combination of the above DAC circuit (to provide an analogue output) and varying the PWM duty cycle (to set the analogue DC level) allows for the creation of specific functions such as a triangular and sine function. This is possible through changing the PWM duty in discrete steps over a cycle \cite{ucd}. A script was written to vary the duty similarly to section II.A., instead this time adjusting the duty according to a custom function for a triangular signal or a sine wave. The full script is available in appendix C.
+
+    \begin{figure*}
+        \includegraphics[width=1.8\columnwidth]{Images/triangleFunc.png}
+        \caption{\label{fig:triangle}Two triangle functions generated using the combination of PWM and a Low Pass Filter. The period was varied by making a time delay in updating each step of the curve. We note the difficulty in achieving a sharp peak on this function. Higher resistance values in the RC circuit produced sharper triangles, but also resulted in noisier signals.}
+    \end{figure*}
+    \begin{figure*}
+        \includegraphics[width=1.8\columnwidth]{Images/sinFunc.png}
+        \caption{\label{fig:sin}Several sin functions generated using the combination of PWM and a Low Pass Filter. The frequency was varied with the same method as in the triangle function case.}
+    \end{figure*}
 
         \subsubsection{Triangular Signal}
+
         A triangular signal was generated through the use of a piecewise function:
         \[T(i) = 
         \begin{cases}
@@ -165,11 +175,58 @@ In this section, we first verify the PWM generation from the Pi Pico behaves as 
             -\frac{2i}{N} + 2 & i \ge \frac{N}{2}
         \end{cases}
         \]
-        where $i$ is the step along the function with $N$ steps.
+        where $i$ is the step along the function with $N$ steps. The period of the signal was set by applying a short delay along each step of the cycle. This delay was defined as a function of the desired as follows:
+        \begin{equation}
+            t_\text{delay} = \frac{\text{period}}{N}
+        \end{equation}
+        Triangle functions for periods of $100\,\text{ms}$ and $50\,\text{ms}$ were plotted in figure \ref{fig:triangle}. We notice that these functions don't peak sharply as expected from the function. Through several observations with varying resistances, we find that higher resistance produces sharper peaks, with the downside of producing more noise on the voltage. For producing these signal functions, we used a $1 \,\text{k}\Omega$ resistor as it provided good signal clarity whilst maintaining minimal noise.
 
         \subsubsection{Sine Wave}
+        
+        Sine wave signals were generated similarly, through the use of the following function:
+        \begin{equation}
+            S(i) = \frac{1}{2}\left(\sin\left(2\pi\frac{i}{N}\right) + 1\right)
+        \end{equation}with a frequency set similarly using a delay per time step. Sin functions for frequencies ranging between $10\,\text{Hz}$ and $100\,\text{Hz}$ were plotted in figure \ref{fig:sin}. We notice how the amplitude of each sin wave decreases as the frequency increases, and attempting to generate higher frequency sine waves results in large attenuation. This is expected behaviour, as we expect the low pass filter to attenuate high frequency changes in the input signal. 10 sin waves were generated with frequencies between $1\,\text{Hz}$ to $1\,\text{kHz}$. The amplitude of each sine wave was determined by subtracting the mean value of each wave from the maximum. These values were plotted against their frequency in decibels with respect to the voltage output of the Pi Pico ($3.3\,\text{V}$). See figure \ref{fig:attenuation}. We see the expected response from the low pass filter, with rapid attenuation after the cut-off frequency. This frequency was $f_c = 15.915$ and is plotted as an orange vertical line through the data. Where it intersects the data is approximately $-3.75\,\text{dB}$, close the expected value of $-3\,\text{dB}$. It is hence obvious why high frequency sin waves are being attenuated with this RC configuration.
 
-        \subsubsection{Accounting for Processing Time}
+        \begin{figure}
+            \includegraphics[width=0.9\columnwidth]{Images/attenuation.png}
+            \caption{\label{fig:attenuation}The amplitude of the output sin wave plotted with respect to the frequency. We see the typical attenuation curve we expect from a low pass filter. Cut-off frequency (for $R=1\,\text{k}\Omega$ and $C=10\,\mu\text{F}$) is marked by the vertical line.}
+        \end{figure}
+
+
+        \subsubsection{Inaccuracies and Accounting for Processing Time}
+        There is an obvious trade-off between increasing the number of steps in the function and time errors in the output. Increasing the number of steps in the function cycle of course increases the accuracy of the output (purely by simply having more data points to plot over the period), however, as Python is by no stretch a slow programming language, we expect delays in the signal output for each step, causing an increase in the overall length of the period. In generating the above functions we initially observed larger periods ($\mathcal{O}(10\,\text{ms})$) than expected. We attempted to ameliorate these errors with a few methods.\\
+
+        While MicroPython contains functions for measuring the time between two points in the code, unfortunately these are not applicable for these purposes as - despite running relatively quickly - take time themselves to run. Hence, they account for the time taken to run the other commands in the loop, but the time they take to run cannot be accounted for.\\
+
+        Another attempt to correct for this issue was to use inbuilt MicroPython function decorators (\textsc{native} and \textsc{viper}). These cause the MicroPython compiler to send to the microcontroller native CPU opcodes in the place of bytecode. These decorators induce limitations on the possible code but generally require no adaptation to the functions \cite{micropython}. The MicroPython documentation suggests these both offer performance increases twice as fast as standard. We were able to implement these decorators however they did not provide improvements significant enough to remove the issue. Difficulties were also encountered with respect to soft restarting the script. We believe the while loop used in the script was not able to be interrupted when converted using these decorators. Fortunately, simply de-powering the Pi Pico by unplugging it fixed these issues.\\
+
+        Other possible implementations include the use of another programming language - C and C++ are approximately 200 times faster than Python in most operations \cite{ucd} - or perhaps the use of third party tools to compile Python to C, see Cython: \url{https://cython.org/}.\\
+
+        The method eventually implemented in the final version of the script was simply a manual correction by visual observation with an oscilloscope. While somewhat crude, it worked effectively and with relatively small errors. As the delay is applied on each step of the function cycle, the correction to the delay must be applied too. Through visual observation, it was quickly apparent that this correction was depended on the number of steps. A table of values was recorded for a range of steps, see table \ref{tab:delayCorrection}. These points were plotted in figure \ref{fig:delayCorrection} and an decaying exponential function was plotted using least squares fitting. A delay correction could be chosen using this function for any given number of steps in the function cycle and applied on each step.
+
+        \begin{table}[]
+        \resizebox{0.2\columnwidth}{!}{%
+        \begin{tabular}{@{}ll@{}}
+        \toprule
+        N    & t_c  \\ \midrule
+        10   & 900  \\
+        15   & 400  \\
+        20   & 250  \\
+        25   & 150  \\
+        100  & 30   \\
+        500  & 25   \\
+        1000 & 25   \\ \bottomrule
+        \end{tabular}%
+        }
+        \caption{Table of time delay correction values for function generation using the DAC. $N$ is the number of steps in the function cycle, and $t_c$ is the time correction subtracted from the delay in each step.}
+        \label{tab:delayCorrection}
+        \end{table}
+
+        \begin{figure}
+            \includegraphics[width=0.9\columnwidth]{Images/delayCorrection.png}
+            \caption{\label{fig:delayCorrection}The time correction values from table \ref{tab:delayCorrection} and a least squares exponential fit. This function could then be used to define a time correction for any given number of steps.}
+        \end{figure}
 
 \section{555 Timer}
     
@@ -206,7 +263,10 @@ In this section, we first verify the PWM generation from the Pi Pico behaves as 
 
 \section{Function Generator Script}
     \begin{figure}[h]
-        \includegraphics[width=\columnwidth]{Images/functionGenerator.pdf}
+        \includegraphics[width=\columnwidth,page=1]{Images/functionGenerator.pdf}
+    \end{figure}
+    \begin{figure}[h]
+        \includegraphics[width=\columnwidth,page=2]{Images/functionGenerator.pdf}
     \end{figure}
 
 

@@ -33,20 +33,32 @@
 \citation{ucd}
 \citation{ucd}
 \citation{ucd}
-\bibdata{aps_reportNotes,aps_references}
 \@writefile{toc}{\contentsline {subsection}{\numberline {C}Generating Analogue Output Functions}{3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A low pass filter to convert the PWM input to an analogue output \cite  {ucd}. Note a Pi Pico is used in our case instead of an Arduino, however the principles remain the same.}}{3}{}}
 \newlabel{fig:DAC}{{4}{3}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces  The output from the simple DAC with a PWM input of $20\,\text  {kHz}$ and $R=270\,\Omega $, $C=0.1\,\mu \text  {F}$}}{3}{}}
 \newlabel{fig:dacVariations}{{5}{3}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Triangular Signal}{3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Two triangle functions generated using the combination of PWM and a Low Pass Filter. The period was varied by making a time delay in updating each step of the curve. We note the difficulty in achieving a sharp peak on this function. Higher resistance values in the RC circuit produced sharper triangles, but also resulted in noisier signals.}}{4}{}}
+\newlabel{fig:triangle}{{6}{4}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Several sin functions generated using the combination of PWM and a Low Pass Filter. The frequency was varied with the same method as in the triangle function case.}}{4}{}}
+\newlabel{fig:sin}{{7}{4}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Sine Wave}{4}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Accounting for Processing Time}{4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {III}555 Timer}{4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A}555 Timer as an Astable Oscillator}{4}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Simulations}{4}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Circuit Construction}{4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B}Designing a Time-To-Amplitude Converter utilising the 555 Timer}{4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The amplitude of the output sin wave plotted with respect to the frequency. We see the typical attenuation curve we expect from a low pass filter. Cut-off frequency (for $R=1\,\text  {k}\Omega $ and $C=10\,\mu \text  {F}$) is marked by the vertical line.}}{4}{}}
+\newlabel{fig:attenuation}{{8}{4}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Inaccuracies and Accounting for Processing Time}{4}{}}
+\citation{micropython}
+\citation{ucd}
+\bibdata{aps_reportNotes,aps_references}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Table of time delay correction values for function generation using the DAC. $N$ is the number of steps in the function cycle, and $t_c$ is the time correction subtracted from the delay in each step.}}{5}{}}
+\newlabel{tab:delayCorrection}{{I}{5}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The time correction values from table \ref {tab:delayCorrection} and a least squares exponential fit. This function could then be used to define a time correction for any given number of steps.}}{5}{}}
+\newlabel{fig:delayCorrection}{{9}{5}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}555 Timer}{5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}555 Timer as an Astable Oscillator}{5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Simulations}{5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Circuit Construction}{5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}Designing a Time-To-Amplitude Converter utilising the 555 Timer}{5}{}}
 \bibcite{barr}{{1}{}{{}}{{}}}
 \bibcite{ucd}{{2}{}{{}}{{}}}
 \bibcite{radioworld}{{3}{}{{}}{{}}}
@@ -57,14 +69,14 @@
 \bibcite{maes_2021}{{8}{}{{}}{{}}}
 \bibcite{horowitz}{{9}{}{{}}{{}}}
 \bibcite{unityGain}{{10}{}{{}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {}References}{5}{}}
-\newlabel{LastBibItem}{{10}{5}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}References}{6}{}}
+\newlabel{LastBibItem}{{10}{6}{}{}{}}
 \@writefile{toc}{\appendix }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Pi Pico Pin Diagram}{6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Linear / Log Brightness Script}{6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Function Generator Script}{8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Pi Pico Pin Diagram}{7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Linear / Log Brightness Script}{7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Function Generator Script}{9}{}}
 \bibstyle{unsrt}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\@writefile{toc}{\contentsline {section}{\numberline {D}Python Notebook}{10}{}}
-\newlabel{LastPage}{{}{10}{}{}{}}
-\gdef \@abspage@last{10}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Python Notebook}{12}{}}
+\newlabel{LastPage}{{}{12}{}{}{}}
+\gdef \@abspage@last{12}

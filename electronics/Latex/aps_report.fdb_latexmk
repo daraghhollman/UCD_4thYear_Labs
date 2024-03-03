@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex aps_report"] 1709472018 "aps_report.aux" "aps_report.bbl" "aps_report" 1709472416 0
+["bibtex aps_report"] 1709501592 "aps_report.aux" "aps_report.bbl" "aps_report" 1709502788 0
   "./aps_references.bib" 1709470317 2576 d4f35acdbc6d68485c9b6a9058a1491a ""
-  "./aps_reportNotes.bib" 1709472415 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "./aps_reportNotes.bib" 1709502787 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "aps_report.aux" 1709472415 4056 ffd25797e09809eda679ee27627d5a6f "pdflatex"
+  "aps_report.aux" 1709502787 5857 9511f68892eca347cd59baae82c32d11 "pdflatex"
   (generated)
   "aps_report.bbl"
   "aps_report.blg"
   (rewritten before read)
-["pdflatex"] 1709472414 "aps_report.tex" "aps_report.pdf" "aps_report" 1709472416 2
+["pdflatex"] 1709502786 "aps_report.tex" "aps_report.pdf" "aps_report" 1709502788 2
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -53,6 +53,8 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1248133631 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
@@ -102,16 +104,20 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1690998448 8172447 c57908b7f5e6dd916a1f4d3e5fb0566c ""
   "/usr/local/texlive/2023/texmf.cnf" 1690998326 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
   "Images/Pico-R3-A4-Pinout.pdf" 1709382669 386050 8fa24f2f3a1d6ae33cc5786d1c83bea8 ""
+  "Images/attenuation.png" 1709492309 28268 6fa41133cad03e795c4507987c4b41c7 ""
   "Images/constDuty.png" 1709382056 41594 43512841c07b6fa057972f2f45d294cd ""
   "Images/constFreq.png" 1709381866 44560 8d3939333625f343a9780ae8470e2d79 ""
   "Images/dac.png" 1709391530 7436 018834df07924ad9d8f9f8b349fa0b20 ""
   "Images/dacVariations.png" 0 -1 0 ""
+  "Images/delayCorrection.png" 1709501380 17975 146c6e8d2a1de623c7c23ff79c8aee16 ""
   "Images/functionGenerator.pdf" 1709471499 31603 994cdb8c0647c5b2a958fae0360f8a11 ""
   "Images/linearLogBrightness.pdf" 1709388658 30169 e48db2642f7306e86ab8704cee2841fa ""
   "Images/pwm.png" 1709376024 15195 dbf98f1b85f3077be8806b015c71a862 ""
-  "aps_report.aux" 1709472415 4056 ffd25797e09809eda679ee27627d5a6f "pdflatex"
-  "aps_report.bbl" 1709472018 1935 48090cebee71afbd9e461e7de948404f "bibtex aps_report"
-  "aps_report.tex" 1709472413 15140 08b0a972a6853808a474d36bf54c9875 ""
+  "Images/sinFunc.png" 1709488796 86412 78c9fcae1d8ab495102c00f64e8c6004 ""
+  "Images/triangleFunc.png" 1709473208 89608 385f015577b1a4471a829a45d6e096d0 ""
+  "aps_report.aux" 1709502787 5857 9511f68892eca347cd59baae82c32d11 "pdflatex"
+  "aps_report.bbl" 1709501593 1935 48090cebee71afbd9e461e7de948404f "bibtex aps_report"
+  "aps_report.tex" 1709502786 22731 33c170580c142f231e5bcc47b1f31bf2 ""
   (generated)
   "aps_report.aux"
   "aps_report.log"
