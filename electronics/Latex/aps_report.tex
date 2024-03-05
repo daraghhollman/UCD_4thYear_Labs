@@ -73,6 +73,7 @@
              %  but any date may be explicitly specified
 
 \begin{abstract}
+    Lorem ipsum, dolar sit amet...
 \end{abstract}
 
 \maketitle
@@ -87,8 +88,6 @@
         \includegraphics[width=0.9\columnwidth]{Images/pwm.png}
         \caption{\label{fig:PWM}Examples of difference duty cycles for a square wave \cite{ucd}.}
     \end{figure}
-
-    The 555 Timer is a...
 
 
 \section{PWM with a Raspberry Pi Pico}
@@ -132,15 +131,21 @@ In this section, we first verify the PWM generation from the Pi Pico behaves as 
         f_c = \frac{1}{2\pi R C}
     \end{equation}At this cut-off frequency, a signal with that frequency has attenuated by $-3 \,\text{dB}$, and further frequencies beyond this cut-off will attenuate at a rate of $-20\,\text{dB}$ per decade. PWM inputs with signal frequencies below this cut-off frequency will be mostly unattenuated and the output will not be smooth. It is then difficult to use high PWM frequencies as the input for the DAC, as larger resistors and capacitors will be needed to increase the cut-off frequency to provide the same attennuating effect.\\
 
-    Given a test input PWM signal of $20\,\text{kHz}$ and a $50$\% duty, a combination of R and C was found to produce a signal with less than $5$\% variation. To have less than $5$\% variation, we need to attenuate the signal by a factor of $1/20$. Coverting this to decibels we have:
-    \begin{align}
-        \text{dB} &= 10 \log_{10}\left( \frac{\text{Signal In}}{\text{Signal Out}} \right)\\
-                  &= 10 \log_{10}\left( 20 \right)\nonumber\\
-                  &\approx 13 \,\text{dB}\nonumber
-    \end{align}hence we must reduce the signal by $13\,\text{dB}$ to achieve this. Based on attenuation slope of $-20\,\text{dB}$ per decade we reach this attentuation for frequencies $1.5 \cdot f_c$. Therefore, for a PWM frequency of $20\,\text{kHz}$, we require a cut-off frequency:
+    Given a test input PWM signal of $20\,\text{kHz}$ and a $50$\% duty, a combination of R and C was found to produce a signal with less than $5$\% variation. To achieve this variation, we must first calculate the voltage across the capacitor as it charges as follows:
     \begin{equation}
-        f_c \le \frac{20\,\text{kHz}}{1.5} \approx 13 \text{kHz}
-    \end{equation}To achieve this, a combination of $R=270\,\Omega$ and $C=0.1\,\mu\text{F}$, yielding $f_c\approx5.9\,\text{kHz}$ was chosen based on the components available. NEED TO TAKE LAB DATA FOR THIS. This output was verified using the oscilloscope and plotted in figure \ref{fig:dacVariation}.\\
+        V_\text{capacitor} = V_\text{source} \left( 1 - e^{\frac{-t}{RC}} \right)
+    \end{equation}where $t$ is the time spent charging with $V_\text{source}$ applied. From here we can solve for a value of RC required. The duty at 50\% will yield an analogue $V_\text{analogue} = 1.65 \,\text{V}$ (half $V_\text{source}=3.3\,\text{V}$), and for this to vary by 5\%, we require:
+    \begin{equation}
+        V_\text{capacitor} = 1.05 \times 1.65 \,\text{V}
+    \end{equation}
+    With a charging time per period of $t = \frac{1}{2} \mathcal{T} = 2.5 \times 10^{-5} \,\text{s}$ (for PWM period $\mathcal{T}$), we hence have:
+    \begin{align}
+        V_\text{capacitor} = \frac{1.05 \times 1.65 \,\text{V}}{3.3\,\text{V}} &= \left( 1 - e^{\frac{-t}{RC}} \right)\\
+        0.525 &= 1 - e^\frac{-t}{RC}\nonumber\\
+        \frac{t}{RC} &= - \ln(0.475)\nonumber\\
+        RC = \frac{t}{0.744} &= 3.36 \times 10^{-5} \,\text{s}
+    \end{align}
+    While any combination of resistance and capacitance with $RC \ge 3.36 \times 10^-5 \,\text{s}$ will achieve this, we selected a combination of $R=680\,\Omega$ and $C=1\,\mu\text{F}$, yielding $RC=6.8\times 10^{-4}$ was chosen based on the components available. This output was verified to have less than 5\% variance using the oscilloscope and the results were plotted in figure \ref{fig:dacVariations}.\\
 
     It is important that this circuit not be used unbuffered. The output signal from the DAC circuit when connected to another circuit will affect the total resistance of the DAC circuit. The change in RC will cause the cut-off frequency to change, producing an unwanted response from the DAC. This can be amended using a unity gain op-amp to buffer the output signal. A unity gain op-amp is an op-amp circuit which has a voltage gain of 1, meaning the input and output signals are equal voltage \cite{unityGain}. However, one useful property of op-amps for this application is that they typically have very high impedence, and hence, will not draw a significant current from the DAC circuit. The total resistance and hence the RC value will remain unchanged \cite{unityGain}.
 
@@ -151,7 +156,7 @@ In this section, we first verify the PWM generation from the Pi Pico behaves as 
     \end{figure}
     \begin{figure}
         \includegraphics[width=0.9\columnwidth]{Images/dacVariations.png}
-        \caption{\label{fig:dacVariations} The output from the simple DAC with a PWM input of $20\,\text{kHz}$ and $R=270\,\Omega$, $C=0.1\,\mu\text{F}$}
+        \caption{\label{fig:dacVariations} The output from the simple DAC with a PWM (orange) input of $20\,\text{kHz}$ and $R=680\,\Omega$, $C=1\,\mu\text{F}$ to produce an output signal (blue) with variation less than 5\%.}
     \end{figure}
 
     \subsection{Generating Analogue Output Functions}
@@ -277,7 +282,7 @@ The 555 Timer is a popular integrated circuit chip for timing, a pin diagram is 
 
 
         \subsubsection{Circuit Construction}
-        This circuit was then constructed following the diagram in figure \ref{fig:potentiometer}. A $5\,\text{V}$ external power supply was used to supply the $V_\text{cc}$ and a simple motor was used to load the circuit. The output of the 555 was passed to the base of a transistor allowing current to flow from the power supply through the motor to ground. This circuit was tested for different RC values. As expected, we found that by varying the potentiometer value, the power to the motor changed and it spun faster or slower. By varying the capacitance in the circuit, the frequency of the 555 output could be changed. The motor response was predominantly the same regardless of frequency, with the most noticeable difference being in the audible tone the motor produced changing in pitch. We encountered a large inertial resistance to spinning, which was - while somewhat difficult to notice - more difficult to overcome with higher frequency outputs. We expect this is due to...
+        This circuit was then constructed following the diagram in figure \ref{fig:potentiometer}. A $5\,\text{V}$ external power supply was used to supply the $V_\text{cc}$ and a simple motor was used to load the circuit. The output of the 555 was passed to the base of a transistor allowing current to flow from the power supply through the motor to ground. This circuit was tested for different RC values. As expected, we found that by varying the potentiometer value, the power to the motor changed and it spun faster or slower. By varying the capacitance in the circuit, the frequency of the 555 output could be changed. The motor response was predominantly the same regardless of frequency, with the most noticeable difference being in the audible tone the motor produced changing in pitch. We encountered a large inertial resistance to spinning (the motor could first be set to higher potentiometer values to get the motor spinning before returing to the target speed), which seemed to be - while somewhat difficult to notice - more difficult to overcome with higher frequency outputs. We expect this is due to...
 
 
 

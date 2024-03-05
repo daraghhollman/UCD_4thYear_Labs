@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.2)  5 MAR 2024 09:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.2)  5 MAR 2024 18:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -321,101 +321,371 @@ Package caption Info: End \AtBeginDocument code.
 \openout3 = `aps_reportNotes.bib'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
 <Images/pwm.png, id=1, 441.65pt x 294.09875pt>
 File: Images/pwm.png Graphic file (type png)
 <use Images/pwm.png>
-Package pdftex.def Info: Images/pwm.png  used on input line 87.
+Package pdftex.def Info: Images/pwm.png  used on input line 88.
 (pdftex.def)             Requested size: 221.3985pt x 147.43045pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 95.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 94.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 95.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 94.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 4940) in paragraph at lines 95--96
+Underfull \hbox (badness 4940) in paragraph at lines 94--95
 \OT1/cmr/m/n/10 cro-con-troller with multi-function dig-i-tal I/O pins
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 \OT1/cmr/m/n/10 at $\OT1/cmtt/m/n/10 https : / / www . raspberrypi . com / documentation /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
 
-Underfull \hbox (badness 1831) in paragraph at lines 97--98
+Underfull \hbox (badness 1831) in paragraph at lines 96--97
 \OT1/cmr/m/n/10 men-ta-tion of Python 3 de-signed to run op-ti-mally
  []
 
 
-Underfull \hbox (badness 3735) in paragraph at lines 97--98
+Underfull \hbox (badness 3735) in paragraph at lines 96--97
 \OT1/cmr/m/n/10 on mi-cro-con-trollers and other small or oth-er-wise
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
 <Images/constFreq.png, id=2, 463.9734pt x 348.3414pt>
 File: Images/constFreq.png Graphic file (type png)
 <use Images/constFreq.png>
-Package pdftex.def Info: Images/constFreq.png  used on input line 105.
+Package pdftex.def Info: Images/constFreq.png  used on input line 104.
 (pdftex.def)             Requested size: 221.3985pt x 166.21864pt.
 <Images/constDuty.png, id=4, 463.9734pt x 348.3414pt>
 File: Images/constDuty.png Graphic file (type png)
 <use Images/constDuty.png>
-Package pdftex.def Info: Images/constDuty.png  used on input line 109.
+Package pdftex.def Info: Images/constDuty.png  used on input line 108.
 (pdftex.def)             Requested size: 221.3985pt x 166.21864pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
 [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Images/pwm.png>]
 
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 114.
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 113.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
 [2 <./Images/constFreq.png> <./Images/constDuty.png>]
-
-LaTeX Warning: Reference `fig:dacVariation' on page 3 undefined on input line 143.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
 
  []
 
 <Images/dac.png, id=30, 564.1075pt x 167.62625pt>
 File: Images/dac.png Graphic file (type png)
 <use Images/dac.png>
-Package pdftex.def Info: Images/dac.p
+Package pdftex.def Info: Images/dac.png  used on input line 154.
+(pdftex.def)             Requested size: 221.3985pt x 65.78831pt.
+<Images/dacVariations.png, id=31, 398.2077pt x 386.6445pt>
+File: Images/dacVariations.png Graphic file (type png)
+<use Images/dacVariations.png>
+Package pdftex.def Info: Images/dacVariations.png  used on input line 158.
+(pdftex.def)             Requested size: 221.3985pt x 214.96782pt.
+<Images/triangleFunc.png, id=32, 956.1321pt x 219.7008pt>
+File: Images/triangleFunc.png Graphic file (type png)
+<use Images/triangleFunc.png>
+Package pdftex.def Info: Images/triangleFunc.png  used on input line 166.
+(pdftex.def)             Requested size: 442.80075pt x 101.74747pt.
+<Images/sinFunc.png, id=33, 959.7456pt x 219.7008pt>
+File: Images/sinFunc.png Graphic file (type png)
+<use Images/sinFunc.png>
+Package pdftex.def Info: Images/sinFunc.png  used on input line 170.
+(pdftex.def)             Requested size: 442.80075pt x 101.3653pt.
+[3 <./Images/dac.png> <./Images/dacVariations.png>]
+<Images/attenuation.png, id=40, 516.7305pt x 388.8126pt>
+File: Images/attenuation.png Graphic file (type png)
+<use Images/attenuation.png>
+Package pdftex.def Info: Images/attenuation.png  used on input line 197.
+(pdftex.def)             Requested size: 221.3985pt x 166.59288pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
+
+ []
+
+[4 <./Images/triangleFunc.png> <./Images/sinFunc.png>]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 205.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 213.
+
+./aps_report.tex:226: Missing $ inserted.
+<inserted text> 
+                $
+l.226         }
+               
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./aps_report.tex:226: Missing $ inserted.
+<inserted text> 
+                $
+l.226         }
+               
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+<Images/delayCorrection.png, id=46, 418.4433pt x 312.2064pt>
+File: Images/delayCorrection.png Graphic file (type png)
+<use Images/delayCorrection.png>
+Package pdftex.def Info: Images/delayCorrection.png  used on input line 232.
+(pdftex.def)             Requested size: 221.3985pt x 165.18753pt.
+<Images/555Pins.png, id=47, 347.2975pt x 352.31625pt>
+File: Images/555Pins.png Graphic file (type png)
+<use Images/555Pins.png>
+Package pdftex.def Info: Images/555Pins.png  used on input line 240.
+(pdftex.def)             Requested size: 172.19925pt x 174.69006pt.
+[5 <./Images/attenuation.png> <./Images/delayCorrection.png>]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 246.
+
+<Images/astable.png, id=54, 318.18875pt x 284.06125pt>
+File: Images/astable.png Graphic file (type png)
+<use Images/astable.png>
+Package pdftex.def Info: Images/astable.png  used on input line 248.
+(pdftex.def)             Requested size: 221.3985pt x 197.64954pt.
+<Images/astableTina.jpg, id=55, 579.66562pt x 355.3275pt>
+File: Images/astableTina.jpg Graphic file (type jpg)
+<use Images/astableTina.jpg>
+Package pdftex.def Info: Images/astableTina.jpg  used on input line 253.
+(pdftex.def)             Requested size: 344.3985pt x 211.11072pt.
+<Images/astableCapacitor.png, id=56, 472.76625pt x 262.9825pt>
+File: Images/astableCapacitor.png Graphic file (type png)
+<use Images/astableCapacitor.png>
+Package pdftex.def Info: Images/astableCapacitor.png  used on input line 260.
+(pdftex.def)             Requested size: 221.3985pt x 123.15636pt.
+<Images/potentiometer.jpg, id=57, 641.39626pt x 323.70938pt>
+File: Images/potentiometer.jpg Graphic file (type jpg)
+<use Images/potentiometer.jpg>
+Package pdftex.def Info: Images/potentiometer.jpg  used on input line 265.
+(pdftex.def)             Requested size: 393.6015pt x 198.65282pt.
+<Images/potentiometerFrequency.png, id=58, 403.9893pt x 386.6445pt>
+File: Images/potentiometerFrequency.png Graphic file (type png)
+<use Images/potentiometerFrequency.png>
+Package pdftex.def Info: Images/potentiometerFrequency.png  used on input line 270.
+(pdftex.def)             Requested size: 221.3985pt x 211.89406pt.
+<Images/potentiometerDuty.png, id=59, 397.485pt x 386.6445pt>
+File: Images/potentiometerDuty.png Graphic file (type png)
+<use Images/potentiometerDuty.png>
+Package pdftex.def Info: Images/potentiometerDuty.png  used on input line 275.
+(pdftex.def)             Requested size: 221.3985pt x 215.3631pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+
+ []
+
+[6 <./Images/555Pins.png> <./Images/astable.png>] (./aps_report.bbl [7 <./Images/astableTina.JPG> <./Images/astableCapacitor.png>] [8 <./Images/potentiometer.JPG>]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 1.
+
+
+Class revtex4-2 Warning: Deferred float stuck during \clearpage processing.
+
+[9 <./Images/potentiometerFrequency.png> <./Images/potentiometerDuty.png>]
+Underfull \hbox (badness 1337) in paragraph at lines 4--8
+ []\OT1/cmr/m/n/9 BARR Group.  In-tro-duc-tion to pulse width mod-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
+ \OT1/cmr/m/n/9 u-la-tion (pwm).  $\OT1/cmtt/m/n/9 https : / / barrgroup . com / blog /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
+ \OT1/cmtt/m/n/9 introduction-[]pulse-[]width-[]modulation-[]pwm$\OT1/cmr/m/n/9 , 2001.
+ []
+
+
+Underfull \hbox (badness 3679) in paragraph at lines 15--19
+ []\OT1/cmr/m/n/9 John Mar-con.  Un-der-stand-ing pwm trans-mit-ters.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--19
+ \OT1/cmtt/m/n/9 https : / / www . radioworld . com / tech-[]and-[]gear /
+ []
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 15--19
+ \OT1/cmtt/m/n/9 understanding-[]pwm-[]transmitters$\OT1/cmr/m/n/9 , 2017.  Ac-cessed:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--25
+ []\OT1/cmr/m/n/9 Raspberry Pi.  Rasp-berry pi doc-u-men-ta-tion:
+ []
+
+
+Underfull \hbox (badness 4819) in paragraph at lines 21--25
+ \OT1/cmr/m/n/9 Rasp-berry pi pico and pico w.  $\OT1/cmtt/m/n/9 https : / / www .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--25
+ \OT1/cmtt/m/n/9 raspberrypi . com / documentation / microcontrollers /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--31
+ []\OT1/cmr/m/n/9 Damien P. George.  Mi-cropy-thon.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--42
+ \OT1/cmtt/m/n/9 https : / / www . intel . com / content / www / us / en / gaming /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--42
+ \OT1/cmtt/m/n/9 resources / highest-[]refresh-[]rate-[]gaming . html$\OT1/cmr/m/n/9 .
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 54--58
+ []\OT1/cmr/m/n/9 eCircuit Cen-ter.  Rc low-pass fil-ter with op amp
+ []
+
+
+Underfull \hbox (badness 2401) in paragraph at lines 54--58
+ \OT1/cmr/m/n/9 buffer.  $\OT1/cmtt/m/n/9 http : / / www . ecircuitcenter . com / Circuits /
+ []
+
+
+Underfull \hbox (badness 1275) in paragraph at lines 60--64
+ []\OT1/cmr/m/n/9 CircuitBread.  555 timer - 1. in-tro-duc-tion to 555
+ []
+
+
+Underfull \hbox (badness 1527) in paragraph at lines 60--64
+ \OT1/cmr/m/n/9 timers.  $\OT1/cmtt/m/n/9 https : / / www . circuitbread . com / tutorials /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--64
+ \OT1/cmtt/m/n/9 555-[]timer-[]1-[]introduction-[]to-[]555-[]timers$\OT1/cmr/m/n/9 , 2022.
+ []
+
+) [10]
+<Images/Pico-R3-A4-Pinout.pdf, id=79, 845.0471pt x 597.50829pt>
+File: Images/Pico-R3-A4-Pinout.pdf Graphic file (type pdf)
+<use Images/Pico-R3-A4-Pinout.pdf>
+Package pdftex.def Info: Images/Pico-R3-A4-Pinout.pdf  used on input line 303.
+(pdftex.def)             Requested size: 510.0pt x 360.60469pt.
+<Images/linearLogBrightness.pdf, id=80, 597.23125pt x 845.1575pt>
+File: Images/linearLogBrightness.pdf Graphic file (type pdf)
+<use Images/linearLogBrightness.pdf>
+Package pdftex.def Info: Images/linearLogBrightness.pdf  used on input line 308.
+(pdftex.def)             Requested size: 510.0pt x 721.72736pt.
+
+
+LaTeX Warning: Float too large for page by 49.72736pt on input line 309.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11 <./Images/Pico-R3-A4-Pinout.pdf>] [12 <./Images/linearLogBrightness.pdf>]
+<Images/functionGenerator.pdf, id=128, page=1, 597.23125pt x 845.1575pt>
+File: Images/functionGenerator.pdf Graphic file (type pdf)
+<use Images/functionGenerator.pdf, page 1>
+Package pdftex.def Info: Images/functionGenerator.pdf , page1 used on input line 315.
+(pdftex.def)             Requested size: 510.0pt x 721.72736pt.
+
+
+LaTeX Warning: Float too large for page by 49.72736pt on input line 316.
+
+<Images/functionGenerator.pdf, id=129, page=2, 597.23125pt x 845.1575pt>
+File: Images/functionGenerator.pdf Graphic file (type pdf)
+<use Images/functionGenerator.pdf, page 2>
+Package pdftex.def Info: Images/functionGenerator.pdf , page2 used on input line 318.
+(pdftex.def)             Requested size: 510.0pt x 721.72736pt.
+
+LaTeX Warning: Float too large for page by 49.72736pt on input line 319.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13] [14 <./Images/functionGenerator.pdf>] [15 <./Images/functionGenerator.pdf>] [16] (./aps_report.aux)
+ ***********
+LaTeX2e <2023-06-01> patch level 1
+L3 programming layer <2023-06-30>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 6575 strings out of 475237
+ 102231 string characters out of 5764559
+ 1937244 words of memory out of 5000000
+ 27755 multiletter control sequences out of 15000+600000
+ 569405 words of font info for 78 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 71i,11n,79p,1485b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on aps_report.pdf (16 pages, 1155669 bytes).
+PDF statistics:
+ 244 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+
