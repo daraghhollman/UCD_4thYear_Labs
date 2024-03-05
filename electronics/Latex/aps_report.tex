@@ -186,7 +186,7 @@ In this section, we first verify the PWM generation from the Pi Pico behaves as 
         Sine wave signals were generated similarly, through the use of the following function:
         \begin{equation}
             S(i) = \frac{1}{2}\left(\sin\left(2\pi\frac{i}{N}\right) + 1\right)
-        \end{equation}with a frequency set similarly using a delay per time step. Sin functions for frequencies ranging between $10\,\text{Hz}$ and $100\,\text{Hz}$ were plotted in figure \ref{fig:sin}. We notice how the amplitude of each sin wave decreases as the frequency increases, and attempting to generate higher frequency sine waves results in large attenuation. This is expected behaviour, as we expect the low pass filter to attenuate high frequency changes in the input signal. 10 sin waves were generated with frequencies between $1\,\text{Hz}$ to $1\,\text{kHz}$. The amplitude of each sine wave was determined by subtracting the mean value of each wave from the maximum. These values were plotted against their frequency in decibels with respect to the voltage output of the Pi Pico ($3.3\,\text{V}$). See figure \ref{fig:attenuation}. We see the expected response from the low pass filter, with rapid attenuation after the cut-off frequency. This frequency was $f_c = 15.915$ and is plotted as an orange vertical line through the data. Where it intersects the data is approximately $-3.75\,\text{dB}$, close the expected value of $-3\,\text{dB}$. It is hence obvious why high frequency sin waves are being attenuated with this RC configuration.
+        \end{equation}with a frequency set similarly using a delay per time step. Sin functions for frequencies ranging between $10\,\text{Hz}$ and $100\,\text{Hz}$ were plotted in figure \ref{fig:sin}. We notice how the amplitude of each sin wave decreases as the frequency increases, and attempting to generate higher frequency sine waves results in large attenuation. This is expected behaviour, as we expect the low pass filter to attenuate high frequency changes in the input signal. 10 sin waves were generated with frequencies between $1\,\text{Hz}$ to $1\,\text{kHz}$. The amplitude of each sine wave was determined by subtracting the mean value of each wave from the maximum. These values were plotted against their frequency in decibels with respect to the voltage output of the Pi Pico ($3.3\,\text{V}$). See figure \ref{fig:attenuation}. We see the expected response from the low pass filter, with rapid attenuation after the cut-off frequency. This frequency was $f_c = 15.915$ and is plotted as an orange vertical line through the data. Where it intersects the data is approximately $-1\,\text{dB}$, far from the expected value of $-3\,\text{dB}$. It is clear that the actual cut-off frequency of this circuit must be higher than calculated, likely due to the use of an unbuffered output as discussed previously. However, it is hence obvious why high frequency sin waves are being attenuated with this RC configuration.
 
         \begin{figure}
             \includegraphics[width=0.9\columnwidth]{Images/attenuation.png}
@@ -229,12 +229,56 @@ In this section, we first verify the PWM generation from the Pi Pico behaves as 
         \end{figure}
 
 \section{555 Timer}
+The 555 Timer is a popular integrated circuit chip for timing, a pin diagram is included in figure \ref{fig:555} \cite{horowitz}. The 555 operates in a simple way; It's output is high when the 555 receives a trigger input (trigger pin voltage less than $\frac{1}{3}V_{\text{cc}}$), and goes low when it receives a threshold input (threshold pin voltage higher than $\frac{2}{3}V_\text{cc}$) \cite{horowitz}. When the output is low, the discharge pin connects to ground, and the when the reset pin is low, the output is forced low. The combination of these simple pin functions allows for a large set of complex applications \cite{horowitz}.
+
+\begin{figure}
+    \includegraphics[width=0.7\columnwidth]{Images/555Pins.png}
+    \caption{\label{fig:555}A pin diagram for the 555 timing IC \cite{horowitz}. Note, pin 5: Control Voltage is excluded in this diagram.}
+\end{figure}
     
     \subsection{555 Timer as an Astable Oscillator}
+    Based on the configuration of capacitors and resistors connected to the input pins of the 555, three main operating modes are possible: monostable (creating one fixed-width pulse and returning to stable off), bistable (operating as a flip flop, stable both on and off), and astable (constant oscillations) \cite{555Modes}. In this section, we will explore the functionality of an astable oscillator, see figure \ref{fig:astable}. In this schematic, we see the trigger and threshold pin both connected (through resistors) to $V_{\text{cc}}$. We also see the discharge pin (7) separating this connection. We can infer that as the circuit begins, the $V_\text{cc}$ supply to the threshold will eventually yield the off output from the circuit, however it is slowed by the chargin of the capactior. Until the capacitor is fully charged, the output will be on. However, when the output switches to off, the discharge will be connected to ground, dropping the voltage to the trigger pin,, discharing the capacitor and eventually yielding the on output. The astable functionality is created from this repeating cycle \cite{555Modes}.
+
+    \begin{figure}
+        \includegraphics[width=0.9\columnwidth]{Images/astable.png}
+        \caption{\label{fig:astable}The configuration of resistors and capacitors required for the 555 to operate in astable mode \cite{555Modes}.}
+    \end{figure}
+
+    \begin{figure*}
+        \includegraphics[width=1.4\columnwidth]{Images/astableTina}
+        \caption{\label{fig:astableTina}The 555 Timer as an astable oscillator created using Tina \cite{tina}. An oscilloscope is placed at the output of 555 to measure its response.}
+    \end{figure*}
 
         \subsubsection{Simulations}
 
+        \begin{figure}
+        \includegraphics[width=0.9\columnwidth]{Images/astableCapacitor.png}
+        \caption{\label{fig:astableCapacitor}How the charging and discharging of the capacitor in the figure \ref{fig:astable} circuit results in differing off and on pulse widths.}
+        \end{figure}
+
+        \begin{figure*}
+        \includegraphics[width=1.6\columnwidth]{Images/potentiometer}
+        \caption{\label{fig:potentiometer}The 555 timer in astable mode can be set up using a potentiometer to vary the speed of charging relative to discharging of the capacitor, enabling dynamic PWM \cite{ucd}.}
+        \end{figure*}
+
+        \begin{figure}
+        \includegraphics[width=0.9\columnwidth]{Images/potentiometerFrequency.png}
+        \caption{\label{fig:potentiometerFrequency}Tina simulations of varying the capacitance in an astable oscillator circuit, see figure \ref{fig:potentiometer}.}
+        \end{figure}
+
+        \begin{figure}
+        \includegraphics[width=0.9\columnwidth]{Images/potentiometerDuty.png}
+        \caption{\label{fig:potentiometerDuty}Tina simulations of varying the charging to discharging rates via a potentiometer in an astable oscillator circuit, see figure \ref{fig:potentiometer}. We see a linear mapping of potentiometer value to duty.}
+        \end{figure}
+
+        We performed simulations of the 555 timer as an astable oscillator using TINA \cite{tina}. The circuit was set up as shown in figure \ref{fig:astableTina}. We observe that while the charging of the capacitor is dependent on both  resistors (as both are between it and $V_\text{cc}$), the discharging only has to flow through one of the resistors. Hence, we can vary the values of each resistor to vary the length of time the 555 is on compared to off. We also find we can vary the overall frequency of oscillations by changing the capacitance so that the capacitor charges and discharges slower or faster. An example of this varied charging and discharging looks like is shown in figure \ref{fig:astableCapacitor}. We can see how changing these resistor values effectively changes the duty of a PWM signal as shown in previous sections.\\
+
+        This PWM feature can be shown more clearly through the use of a potentiometer to vary resistance of one of the previous resistors. A circuit to demonstrate this was simulated in Tina as shown in figure \ref{fig:potentiometer} \cite{tina}. This circuit was simulated for different potentiometer resistances and capacitors to fully demonstrate the functionality of the circuit. Figure \ref{fig:potentiometerFrequency} shows simulation outputs showing how changing the value of capacitance will affect the frequency of oscillations in the output. Figure \ref{fig:potentiometerDuty} shows simulation outputs showing how changing the value of the potentiometer affects the duty cycle of these oscillations. We see that the use of diodes in the circuit allows for the mapping of equal resistances to the 50\% point of the potentiometer. We also see that for a potentiometer value of 0\%, we still have an on signal for an appreciable portion of the cycle. This likely due to non-zero resistance minima in non-ideal potentiometers. The weight of this effect can be mitigated by increasing the size of the other resistor between the potentiometer and $V_\text{cc}$, causing the on signal width to be smaller relative to the off signal width.
+
+
         \subsubsection{Circuit Construction}
+        This circuit was then constructed following the diagram in figure \ref{fig:potentiometer}. A $5\,\text{V}$ external power supply was used to supply the $V_\text{cc}$ and a simple motor was used to load the circuit. The output of the 555 was passed to the base of a transistor allowing current to flow from the power supply through the motor to ground. This circuit was tested for different RC values. As expected, we found that by varying the potentiometer value, the power to the motor changed and it spun faster or slower. By varying the capacitance in the circuit, the frequency of the 555 output could be changed. The motor response was predominantly the same regardless of frequency, with the most noticeable difference being in the audible tone the motor produced changing in pitch. We encountered a large inertial resistance to spinning, which was - while somewhat difficult to notice - more difficult to overcome with higher frequency outputs. We expect this is due to...
+
 
 
     \subsection{Designing a Time-To-Amplitude Converter utilising the 555 Timer}

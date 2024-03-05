@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex aps_report"] 1709501592 "aps_report.aux" "aps_report.bbl" "aps_report" 1709502788 0
-  "./aps_references.bib" 1709470317 2576 d4f35acdbc6d68485c9b6a9058a1491a ""
-  "./aps_reportNotes.bib" 1709502787 0 d41d8cd98f00b204e9800998ecf8427e ""
+["bibtex aps_report"] 1709629428 "aps_report.aux" "aps_report.bbl" "aps_report" 1709629676 0
+  "./aps_references.bib" 1709625183 3027 5173b71adecdbbad40e8281b75fa3598 ""
+  "./aps_reportNotes.bib" 1709629674 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "aps_report.aux" 1709502787 5857 9511f68892eca347cd59baae82c32d11 "pdflatex"
+  "aps_report.aux" 1709629675 8070 a984afb69269268a63e33e6457e77b71 "pdflatex"
   (generated)
   "aps_report.bbl"
   "aps_report.blg"
   (rewritten before read)
-["pdflatex"] 1709502786 "aps_report.tex" "aps_report.pdf" "aps_report" 1709502788 2
+["pdflatex"] 1709629674 "aps_report.tex" "aps_report.pdf" "aps_report" 1709629676 2
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -103,8 +103,12 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1690998333 4647401 00ff9efb2ef8bbb46dd24b87a26bdf62 ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1690998448 8172447 c57908b7f5e6dd916a1f4d3e5fb0566c ""
   "/usr/local/texlive/2023/texmf.cnf" 1690998326 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
+  "Images/555Pins.png" 1709573815 19411 4911f4fd2034d5c573d18c9c575329a1 ""
   "Images/Pico-R3-A4-Pinout.pdf" 1709382669 386050 8fa24f2f3a1d6ae33cc5786d1c83bea8 ""
-  "Images/attenuation.png" 1709492309 28268 6fa41133cad03e795c4507987c4b41c7 ""
+  "Images/astable.png" 1709624451 23088 8dd6c33aac7363ec459c229fd769f2ab ""
+  "Images/astableCapacitor.png" 1709626363 49838 84d9847819267a416be61b214db2ac01 ""
+  "Images/astableTina.JPG" 1708609494 52478 4d3970c8f406ec5a76f49a561ae98e2d ""
+  "Images/attenuation.png" 1709629096 27662 25745eb967c047e699bb75f8bed72e1e ""
   "Images/constDuty.png" 1709382056 41594 43512841c07b6fa057972f2f45d294cd ""
   "Images/constFreq.png" 1709381866 44560 8d3939333625f343a9780ae8470e2d79 ""
   "Images/dac.png" 1709391530 7436 018834df07924ad9d8f9f8b349fa0b20 ""
@@ -112,12 +116,15 @@
   "Images/delayCorrection.png" 1709501380 17975 146c6e8d2a1de623c7c23ff79c8aee16 ""
   "Images/functionGenerator.pdf" 1709471499 31603 994cdb8c0647c5b2a958fae0360f8a11 ""
   "Images/linearLogBrightness.pdf" 1709388658 30169 e48db2642f7306e86ab8704cee2841fa ""
+  "Images/potentiometer.JPG" 1708611788 57274 59a506ac4b57f5efc40354c013836a7c ""
+  "Images/potentiometerDuty.png" 1709628501 35117 de27dc3f2af4cfacdf1a992d3699cbf8 ""
+  "Images/potentiometerFrequency.png" 1709628019 27893 1d06c16aad4f039b1432c7e9e38f6c01 ""
   "Images/pwm.png" 1709376024 15195 dbf98f1b85f3077be8806b015c71a862 ""
   "Images/sinFunc.png" 1709488796 86412 78c9fcae1d8ab495102c00f64e8c6004 ""
   "Images/triangleFunc.png" 1709473208 89608 385f015577b1a4471a829a45d6e096d0 ""
-  "aps_report.aux" 1709502787 5857 9511f68892eca347cd59baae82c32d11 "pdflatex"
-  "aps_report.bbl" 1709501593 1935 48090cebee71afbd9e461e7de948404f "bibtex aps_report"
-  "aps_report.tex" 1709502786 22731 33c170580c142f231e5bcc47b1f31bf2 ""
+  "aps_report.aux" 1709629675 8070 a984afb69269268a63e33e6457e77b71 "pdflatex"
+  "aps_report.bbl" 1709629429 2329 f9fa8538dc0433b115b1e3e7c0004bee "bibtex aps_report"
+  "aps_report.tex" 1709629673 29214 e12bfcaf64d4eccc39003ecca7dd3c67 ""
   (generated)
   "aps_report.aux"
   "aps_report.log"

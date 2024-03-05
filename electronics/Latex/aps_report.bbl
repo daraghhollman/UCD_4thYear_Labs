@@ -56,4 +56,16 @@ eCircuit Center.
 \newblock \url{http://www.ecircuitcenter.com/Circuits/opfil1/opfil1.htm}, 2010.
 \newblock Accessed: 2024-03-02.
 
+\bibitem{555Modes}
+CircuitBread.
+\newblock 555 timer - 1. introduction to 555 timers.
+\newblock \url{https://www.circuitbread.com/tutorials/555-timer-1-introduction-to-555-timers}, 2022.
+\newblock Accessed:2024-03-05.
+
+\bibitem{tina}
+DesignSoft.
+\newblock Tina: Circuit simulator for analog, digital, mcu, and rf circuits.
+\newblock \url{https://www.tina.com/}.
+\newblock Accessed:2024-03-05.
+
 \end{thebibliography}
