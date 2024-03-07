@@ -36,7 +36,7 @@
 \citation{ucd}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A low pass filter to convert the PWM input to an analogue output \cite  {ucd}. Note a Pi Pico is used in our case instead of an Arduino, however the principles remain the same.}}{3}{}}
 \newlabel{fig:DAC}{{4}{3}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces  The output from the simple DAC with a PWM (orange) input of $20\,\text  {kHz}$ and $R=680\,\Omega $, $C=1\,\mu \text  {F}$ to produce an output signal (blue) with variation less than 5\%.}}{3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces  The output from the simple DAC with a PWM (orange) input of $20\,\text  {kHz}$ and $R=680\,\Omega $, $C=1\,\mu \text  {F}$ to produce an output signal (blue) with variation less than 5\%. \textit  {Second panel}: The DAC output normalised to the mean output.}}{3}{}}
 \newlabel{fig:dacVariations}{{5}{3}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {C}Generating Analogue Output Functions}{3}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Triangular Signal}{3}{}}
@@ -77,18 +77,39 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces The configuration of resistors and capacitors required for the 555 to operate in astable mode \cite  {555Modes}.}}{6}{}}
 \newlabel{fig:astable}{{11}{6}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Circuit Construction}{6}{}}
-\bibdata{aps_reportNotes,aps_references}
+\citation{ortec}
+\citation{horowitz,muons}
+\citation{ortec}
+\citation{ortec}
+\citation{ortec}
+\citation{ortec}
+\citation{ortec}
+\citation{ortec}
+\citation{ortec}
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces The 555 Timer as an astable oscillator created using Tina \cite  {tina}. An oscilloscope is placed at the output of 555 to measure its response.}}{7}{}}
 \newlabel{fig:astableTina}{{12}{7}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces How the charging and discharging of the capacitor in the figure \ref {fig:astable} circuit results in differing off and on pulse widths.}}{7}{}}
 \newlabel{fig:astableCapacitor}{{13}{7}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {B}Designing a Time-To-Amplitude Converter utilising the 555 Timer}{7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Theory}{7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Bistable 555 Timer}{7}{}}
+\citation{horowitz}
+\citation{horowitz}
 \@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces The 555 timer in astable mode can be set up using a potentiometer to vary the speed of charging relative to discharging of the capacitor, enabling dynamic PWM \cite  {ucd}.}}{8}{}}
 \newlabel{fig:potentiometer}{{14}{8}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Tina simulations of varying the capacitance in an astable oscillator circuit, see figure \ref {fig:potentiometer}.}}{9}{}}
-\newlabel{fig:potentiometerFrequency}{{15}{9}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Tina simulations of varying the charging to discharging rates via a potentiometer in an astable oscillator circuit, see figure \ref {fig:potentiometer}. We see a linear mapping of potentiometer value to duty.}}{9}{}}
-\newlabel{fig:potentiometerDuty}{{16}{9}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Tina simulations of varying the capacitance in an astable oscillator circuit, see figure \ref {fig:potentiometer}.}}{8}{}}
+\newlabel{fig:potentiometerFrequency}{{15}{8}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Tina simulations of varying the charging to discharging rates via a potentiometer in an astable oscillator circuit, see figure \ref {fig:potentiometer}. We see a linear mapping of potentiometer value to duty.}}{8}{}}
+\newlabel{fig:potentiometerDuty}{{16}{8}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Integrating Op Amp}{8}{}}
+\newlabel{eq:integrator}{{12}{8}{}{}{}}
+\bibdata{aps_reportNotes,aps_references}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces A simplified example of a TAC circuit \cite  {ortec}. Note that toggle switches have been included for simplicity, and TAC circuits generally use transistors as switches for such actions \cite  {ortec}.}}{9}{}}
+\newlabel{fig:tacManual}{{17}{9}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4}Monostable 555 Timer}{9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5}Configuration}{9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces A full circuit diagram for the TAC simulation in Tina.}}{10}{}}
+\newlabel{fig:tac}{{18}{10}{}{}{}}
 \bibcite{barr}{{1}{}{{}}{{}}}
 \bibcite{ucd}{{2}{}{{}}{{}}}
 \bibcite{radioworld}{{3}{}{{}}{{}}}
@@ -101,14 +122,16 @@
 \bibcite{unityGain}{{10}{}{{}}{{}}}
 \bibcite{555Modes}{{11}{}{{}}{{}}}
 \bibcite{tina}{{12}{}{{}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {}References}{10}{}}
-\newlabel{LastBibItem}{{12}{10}{}{}{}}
+\bibcite{ortec}{{13}{}{{}}{{}}}
+\bibcite{muons}{{14}{}{{}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {}References}{11}{}}
+\newlabel{LastBibItem}{{14}{11}{}{}{}}
 \@writefile{toc}{\appendix }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Pi Pico Pin Diagram}{11}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Linear / Log Brightness Script}{11}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Function Generator Script}{13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Pi Pico Pin Diagram}{12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Linear / Log Brightness Script}{12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Function Generator Script}{14}{}}
 \bibstyle{unsrt}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\@writefile{toc}{\contentsline {section}{\numberline {D}Python Notebook}{16}{}}
-\newlabel{LastPage}{{}{16}{}{}{}}
-\gdef \@abspage@last{16}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Python Notebook}{17}{}}
+\newlabel{LastPage}{{}{17}{}{}{}}
+\gdef \@abspage@last{17}

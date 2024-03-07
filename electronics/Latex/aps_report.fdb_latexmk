@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex aps_report"] 1709662707 "aps_report.aux" "aps_report.bbl" "aps_report" 1709662707 0
-  "./aps_references.bib" 1709630061 3027 5173b71adecdbbad40e8281b75fa3598 ""
-  "./aps_reportNotes.bib" 1709662704 0 d41d8cd98f00b204e9800998ecf8427e ""
+["bibtex aps_report"] 1709830531 "aps_report.aux" "aps_report.bbl" "aps_report" 1709831035 0
+  "./aps_references.bib" 1709818896 3814 74054ade48817e1d2128d5b653f9380a ""
+  "./aps_reportNotes.bib" 1709831034 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "aps_report.aux" 1709662705 8196 e0a2aa8d66ab4825497665303c4b0287 "pdflatex"
+  "aps_report.aux" 1709831035 9490 31646344ce416918c48681dbc4747bde "pdflatex"
   (generated)
   "aps_report.bbl"
   "aps_report.blg"
   (rewritten before read)
-["pdflatex"] 1709662703 "aps_report.tex" "aps_report.pdf" "aps_report" 1709662707 2
+["pdflatex"] 1709831033 "aps_report.tex" "aps_report.pdf" "aps_report" 1709831035 2
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -43,6 +43,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1136768653 1116 25a7bf822c58caf309a702ef79f4afbb ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti7.tfm" 1136768653 1492 86331993fe614793f5e7e755835c31c5 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti9.tfm" 1136768653 1476 cccc6cc4935c18ec3d5623b77ecb8b74 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm" 1136768653 764 c98a2af25c99b73a368cf7336e255190 ""
@@ -62,6 +63,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb" 1248133631 36607 d654cb3f2bc54f57509240071db3bffa ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb" 1248133631 36310 f5ddc6715cc60deb16d9db5ded6a9391 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1248133631 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb" 1248133631 29078 718ea4567ceff944262b0f5b0800e1d9 ""
@@ -112,7 +114,7 @@
   "Images/constDuty.png" 1709382056 41594 43512841c07b6fa057972f2f45d294cd ""
   "Images/constFreq.png" 1709381866 44560 8d3939333625f343a9780ae8470e2d79 ""
   "Images/dac.png" 1709391530 7436 018834df07924ad9d8f9f8b349fa0b20 ""
-  "Images/dacVariations.png" 1709660641 44825 a2d84ef09fee6f68e7c8dcf55601e67b ""
+  "Images/dacVariations.png" 1709828325 47710 3cba86ac04f8a4900e53a11d278e0fb7 ""
   "Images/delayCorrection.png" 1709501380 17975 146c6e8d2a1de623c7c23ff79c8aee16 ""
   "Images/functionGenerator.pdf" 1709471499 31603 994cdb8c0647c5b2a958fae0360f8a11 ""
   "Images/linearLogBrightness.pdf" 1709388658 30169 e48db2642f7306e86ab8704cee2841fa ""
@@ -121,10 +123,12 @@
   "Images/potentiometerFrequency.png" 1709628019 27893 1d06c16aad4f039b1432c7e9e38f6c01 ""
   "Images/pwm.png" 1709376024 15195 dbf98f1b85f3077be8806b015c71a862 ""
   "Images/sinFunc.png" 1709488796 86412 78c9fcae1d8ab495102c00f64e8c6004 ""
+  "Images/tac.JPG" 1709225638 107834 5ca34fe90e96b1c7224db9487ada9946 ""
+  "Images/tacManual.png" 1709821796 85863 6a34deadcaed27181b47e7322a485799 ""
   "Images/triangleFunc.png" 1709473208 89608 385f015577b1a4471a829a45d6e096d0 ""
-  "aps_report.aux" 1709662705 8196 e0a2aa8d66ab4825497665303c4b0287 "pdflatex"
-  "aps_report.bbl" 1709662707 2329 f9fa8538dc0433b115b1e3e7c0004bee "bibtex aps_report"
-  "aps_report.tex" 1709662702 30508 dc6ccceae94d1b3e3c8e8f17e3af2e27 ""
+  "aps_report.aux" 1709831035 9490 31646344ce416918c48681dbc4747bde "pdflatex"
+  "aps_report.bbl" 1709830532 2768 b3df5d7ec87837b0f3e59cc35e130e9c "bibtex aps_report"
+  "aps_report.tex" 1709831035 37091 7c685c4df22c721a8dbc6cbdb2d9e202 ""
   (generated)
   "aps_report.aux"
   "aps_report.log"

@@ -139,6 +139,7 @@ INPUT ./Images/dacVariations.png
 INPUT ./Images/dacVariations.png
 INPUT ./Images/dacVariations.png
 INPUT ./Images/dacVariations.png
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT ./Images/triangleFunc.png
 INPUT ./Images/triangleFunc.png
 INPUT ./Images/triangleFunc.png
@@ -208,6 +209,14 @@ INPUT ./Images/potentiometerDuty.png
 INPUT ./Images/potentiometerDuty.png
 INPUT ./Images/potentiometerDuty.png
 INPUT ./Images/potentiometerDuty.png
+INPUT ./Images/tacManual.png
+INPUT ./Images/tacManual.png
+INPUT ./Images/tacManual.png
+INPUT ./Images/tacManual.png
+INPUT ./Images/tac.JPG
+INPUT ./Images/tac.JPG
+INPUT ./Images/tac.JPG
+INPUT ./Images/tac.JPG
 INPUT ./aps_report.bbl
 INPUT ./aps_report.bbl
 INPUT aps_report.bbl
@@ -249,6 +258,7 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb

@@ -68,4 +68,15 @@ DesignSoft.
 \newblock \url{https://www.tina.com/}.
 \newblock Accessed:2024-03-05.
 
+\bibitem{ortec}
+ORTEC.
+\newblock Time-to-amplitude convertors and time calibrator.
+\newblock \url{https://virgilio.mib.infn.it/brofferio/didattica/datasheet/NoteOrtec-TAC-Time-Calibrator.pdf}.
+\newblock Accessed: 2024-03-07.
+
+\bibitem{muons}
+R.~E. Hall, D.~A. Lind, and R.~A. Ristinen.
+\newblock A simplified muon lifetime experiment for the instructional laboratory.
+\newblock {\em American journal of physics}, 38(10):1196--1200, 1970.
+
 \end{thebibliography}

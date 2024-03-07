@@ -156,7 +156,7 @@ In this section, we first verify the PWM generation from the Pi Pico behaves as 
     \end{figure}
     \begin{figure}
         \includegraphics[width=0.9\columnwidth]{Images/dacVariations.png}
-        \caption{\label{fig:dacVariations} The output from the simple DAC with a PWM (orange) input of $20\,\text{kHz}$ and $R=680\,\Omega$, $C=1\,\mu\text{F}$ to produce an output signal (blue) with variation less than 5\%.}
+    \caption{\label{fig:dacVariations} The output from the simple DAC with a PWM (orange) input of $20\,\text{kHz}$ and $R=680\,\Omega$, $C=1\,\mu\text{F}$ to produce an output signal (blue) with variation less than 5\%. \textit{Second panel}: The DAC output normalised to the mean output.}
     \end{figure}
 
     \subsection{Generating Analogue Output Functions}
@@ -242,7 +242,7 @@ The 555 Timer is a popular integrated circuit chip for timing, a pin diagram is 
 \end{figure}
     
     \subsection{555 Timer as an Astable Oscillator}
-    Based on the configuration of capacitors and resistors connected to the input pins of the 555, three main operating modes are possible: monostable (creating one fixed-width pulse and returning to stable off), bistable (operating as a flip flop, stable both on and off), and astable (constant oscillations) \cite{555Modes}. In this section, we will explore the functionality of an astable oscillator, see figure \ref{fig:astable}. In this schematic, we see the trigger and threshold pin both connected (through resistors) to $V_{\text{cc}}$. We also see the discharge pin (7) separating this connection. We can infer that as the circuit begins, the $V_\text{cc}$ supply to the threshold will eventually yield the off output from the circuit, however it is slowed by the chargin of the capactior. Until the capacitor is fully charged, the output will be on. However, when the output switches to off, the discharge will be connected to ground, dropping the voltage to the trigger pin,, discharing the capacitor and eventually yielding the on output. The astable functionality is created from this repeating cycle \cite{555Modes}.
+    Based on the configuration of capacitors and resistors connected to the input pins of the 555, three main operating modes are possible: monostable (creating one fixed-width pulse and returning to stable off), bistable (operating as a flip flop, stable both on and off), and astable (constant oscillations) \cite{555Modes}. In this section, we will explore the functionality of an astable oscillator, see figure \ref{fig:astable}. In this schematic, we see the trigger and threshold pin both connected (through resistors) to $V_{\text{cc}}$. We also see the discharge pin (7) separating this connection. We can infer that as the circuit begins, the $V_\text{cc}$ supply to the threshold will eventually yield the off output from the circuit, however it is slowed by the charging of the capacitor. Until the capacitor is fully charged, the output will be on. However, when the output switches to off, the discharge will be connected to ground, dropping the voltage to the trigger pin, discharging the capacitor and eventually yielding the on output. The astable functionality is created from this repeating cycle \cite{555Modes}.
 
     \begin{figure}
         \includegraphics[width=0.9\columnwidth]{Images/astable.png}
@@ -282,11 +282,57 @@ The 555 Timer is a popular integrated circuit chip for timing, a pin diagram is 
 
 
         \subsubsection{Circuit Construction}
-        This circuit was then constructed following the diagram in figure \ref{fig:potentiometer}. A $5\,\text{V}$ external power supply was used to supply the $V_\text{cc}$ and a simple motor was used to load the circuit. The output of the 555 was passed to the base of a transistor allowing current to flow from the power supply through the motor to ground. This circuit was tested for different RC values. As expected, we found that by varying the potentiometer value, the power to the motor changed and it spun faster or slower. By varying the capacitance in the circuit, the frequency of the 555 output could be changed. The motor response was predominantly the same regardless of frequency, with the most noticeable difference being in the audible tone the motor produced changing in pitch. We encountered a large inertial resistance to spinning (the motor could first be set to higher potentiometer values to get the motor spinning before returing to the target speed), which seemed to be - while somewhat difficult to notice - more difficult to overcome with higher frequency outputs. We expect this is due to...
-
+        This circuit was then constructed following the diagram in figure \ref{fig:potentiometer}. A $5\,\text{V}$ external power supply was used to supply the $V_\text{cc}$ and a simple motor was used to load the circuit. The output of the 555 was passed to the base of a transistor allowing current to flow from the power supply through the motor to ground. This circuit was tested for different RC values. As expected, we found that by varying the potentiometer value, the power to the motor changed and it spun faster or slower. By varying the capacitance in the circuit, the frequency of the 555 output could be changed. The motor response was predominantly the same regardless of frequency, with the most noticeable difference being in the audible tone the motor produced changing in pitch. We encountered a large inertial resistance to spinning (the motor could first be set to higher potentiometer values to get the motor spinning before returning to the target speed), which seemed to be - while somewhat difficult to notice - more difficult to overcome with higher frequency outputs.
 
 
     \subsection{Designing a Time-To-Amplitude Converter utilising the 555 Timer}
+
+        \subsubsection{Theory}
+        A time-to-amplitude converter (TAC) is a device capable of precisely measuring small time intervals and outputting a pulse with proportional amplitude \cite{ortec}. The TAC is an important tool with applications in nuclear physics for measuring the decay times of a short-lived particle (such as in measuring muon lifetimes) \cite{horowitz, muons}.\\
+
+        A simple circuit example of a TAC is included in figure \ref{fig:tacManual} \cite{ortec}. A source of constant current is used to charge a capacitor linearly (limited by saturation) by the following relation:
+        \begin{equation}
+            V = \frac{I t}{C}
+        \end{equation}where $V$ is the voltage across the capacitor, $I$ is the constant current, and $t$ the time \cite{ortec}. After receiving a start signal, the "start" switch opens and "stop" switch closes allowing the capacitor to start charging. The "stop" switch subsequently closes on a stop signal and the voltage built up on the capacitor is gives the amplitude for the output signal. On a stop signal, the linear gate opens to pass the voltage pulse out, and then closes after some time resulting in a fixed width rectangular pulse output \cite{ortec}. The capacitor is then discharged and switches are all returned to their initial positions.\\
+
+        \begin{figure*}
+            \includegraphics[width=1.8\columnwidth]{Images/tacManual}
+            \caption{\label{fig:tacManual}A simplified example of a TAC circuit \cite{ortec}. Note that toggle switches have been included for simplicity, and TAC circuits generally use transistors as switches for such actions \cite{ortec}.}
+        \end{figure*}
+
+        While a simple representation, some of these components - namely the constant current source - are non-trivial to construct in a undergraduate lab environment. However, it should also be possible to recreate the functionality of this circuit (at least as a proof of concept) using a bistable 555 timer and an integrating op-amp.
+
+        \subsubsection{Bistable 555 Timer}
+        Discuss what it is, what is different from the astable. Include simple circuit diagram. Explain how the start and stop signals can power transistors to switch on and off.\\
+
+        A 555 timer in bistable mode differs from the astable mode described about in that both the on and off outputs are stable. The 555 effectively acts as a switch and remains in the on or off state as desired. The circuit diagram of the bistable 555 can be found on the left side of figure \ref{fig:tac}. The leading edge of the start signal will apply a voltage to the base of a transistor, grounding the trigger and causing the 555 output to turn on. Similarly, a stop signal grounds the reset pin via a transistor causing the 555 output to be low. Hence, for the time between the leading edge of the start and stop signals, the 555 output will be high, after which it is low.
+
+        \subsubsection{Integrating Op Amp}
+        The output of the 555 is passed to an integrating op-amp. Op-amps allow for nearly perfect integrators, without the restriction of the output voltage being less than the input \cite{horowitz}. The integrator adds the signal from the inverting input by charging a capacitor in the feedback loop. The voltage of the capacitor with respect to the non-inverting input is then given by the following equation \cite{horowitz}:
+        \begin{equation}
+            V_\text{out} = -\frac{1}{RC} \int V_\text{in} dt + \text{const.}
+            \label{eq:integrator}
+        \end{equation}where $R$ and $C$ are the resistance and capacitance of the integrator circuit and $V_\text{in}$ is the voltage input. This voltage level can then be passed to any means of generating a pulse. The op-amp circuit in our TAC can be found in the centre of figure \ref{fig:tac}.
+
+        \subsubsection{Monostable 555 Timer}
+        To create the pulse, a monostable 555 Timer was used, see the right hand side of figure \ref{fig:tac}. A monostable 555 is constructed such that it creates a single fixed with pulse after grounding the trigger pin which has an amplitude equal to the $V_\text{cc}$. By passing the integrated voltage to the $V_\text{cc}$ when a stop signal arrives, an output pulse with fixed width can be created by grounding the trigger.\\
+
+        The circuit as a whole then works in the following way. The start pulse arrives and grounds the trigger pin causing the output of the bistable 555 to go high. As a result, the input of the op-amp integrator is high and the capacitor starts charging as the op-amp integrates the 555 signal. When a stop signal arrives, the monostable 555 is reset and the output goes to off. The op-amp stops integrating further and a fixed with output pulse is created by the monostable 555, with amplitude proportional to the capacitor voltage, and hence, proportional to the time between the stop and start signals.\\ 
+
+        The circuit was simulated using Tina and some unexpected behaviour occurred. Unwanted capacitor charging and discharging was occurring in the Tina simulations of the circuit. A diode was included between the bistable 555 output and the integrator input to ensure no discharging could occur back through the 555. Other diode positions were tried with respect to the integrator but this position yielded expected output. A voltage inverter was used after the integrator. As shown in equation \ref{eq:integrator}, the voltage output from the integrator is negative with respect to the input, and hence must be inverted to restore a positive voltage signal passed to the monostable 555. The circuit was difficult to demonstrate using Tina as - shown in figure \ref{fig:tac} - push buttons were used to generate start and stop signals and hard to create consistency in inputs. Larger $R$ and $C$ values were used to slow the integration time to measure these longer time intervals.\\
+
+        We attempted to construct this circuit physically but unfortunately could not get it functional for manual signal inputs. The integrator output remained at $\approx0\,\text{V}$ regardless of bistable 555 input.
+
+
+        \subsubsection{Configuration}
+        How different output pulse widths could be selected. How to choose component values to map the time difference to an amplitude.
+
+            
+            \begin{figure*}
+                \includegraphics[width=2\columnwidth]{Images/tac}
+                \caption{\label{fig:tac}A full circuit diagram for the TAC simulation in Tina.}
+            \end{figure*}
+    
 
 
 \clearpage
