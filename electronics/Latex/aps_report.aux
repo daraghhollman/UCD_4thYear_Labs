@@ -9,17 +9,17 @@
 \citation{Pi}
 \citation{micropython}
 \citation{ucd}
-\citation{potter_2014}
-\citation{refresh}
 \newlabel{FirstPage}{{}{1}{}{}{}}
 \@writefile{toc}{\contentsline {title}{PHYC40600 - Physics with Astronomy and Space Science Lab 2;\\\vspace  {1cm}555 Timer and Raspberry Pi Pico Pulse-Width Modulation}{1}{}}
 \@writefile{toc}{\contentsline {abstract}{Abstract}{1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {II}PWM with a Raspberry Pi Pico}{1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Examples of difference duty cycles for a square wave \cite  {ucd}.}}{1}{}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:PWM}{{1}{1}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}PWM with a Raspberry Pi Pico}{1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A}PWM Basics and Applications to Varying LED Brightness}{1}{}}
+\citation{potter_2014}
+\citation{refresh}
 \citation{maes_2021}
 \citation{ucd}
 \citation{ucd}
@@ -28,26 +28,22 @@
 \newlabel{fig:constFreq}{{2}{2}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces PWM output from the Pi Pico showing variations in frequency for a constant duty of $\approx 50$\% (i.e. $65535/2 \approx 32768$, rounding to an integer value.)}}{2}{}}
 \newlabel{fig:constDuty}{{3}{2}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B}Simple DAC}{2}{}}
 \citation{unityGain}
 \citation{unityGain}
 \citation{ucd}
 \citation{ucd}
 \citation{ucd}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}Simple DAC}{3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A low pass filter to convert the PWM input to an analogue output \cite  {ucd}. Note a Pi Pico is used in our case instead of an Arduino, however the principles remain the same.}}{3}{}}
 \newlabel{fig:DAC}{{4}{3}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces  The output from the simple DAC with a PWM (orange) input of $20\,\text  {kHz}$ and $R=680\,\Omega $, $C=1\,\mu \text  {F}$ to produce an output signal (blue) with variation less than 5\%. \textit  {Second panel}: The DAC output normalised to the mean output.}}{3}{}}
 \newlabel{fig:dacVariations}{{5}{3}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {C}Generating Analogue Output Functions}{3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Triangular Signal}{3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Two triangle functions generated using the combination of PWM and a Low Pass Filter. The period was varied by making a time delay in updating each step of the curve. We note the difficulty in achieving a sharp peak on this function. Higher resistance values in the RC circuit produced sharper triangles, but also resulted in noisier signals.}}{4}{}}
-\newlabel{fig:triangle}{{6}{4}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Several sin functions generated using the combination of PWM and a Low Pass Filter. The frequency was varied with the same method as in the triangle function case.}}{4}{}}
-\newlabel{fig:sin}{{7}{4}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Sine Wave}{4}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Inaccuracies and Accounting for Processing Time}{4}{}}
 \citation{micropython}
 \citation{ucd}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Triangular Signal}{4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Sine Wave}{4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Inaccuracies and Accounting for Processing Time}{4}{}}
 \citation{horowitz}
 \citation{horowitz}
 \citation{horowitz}
@@ -55,12 +51,14 @@
 \citation{horowitz}
 \citation{555Modes}
 \citation{555Modes}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Two triangle functions generated using the combination of PWM and a Low Pass Filter. The period was varied by making a time delay in updating each step of the curve. We note the difficulty in achieving a sharp peak on this function. Higher resistance values in the RC circuit produced sharper triangles, but also resulted in noisier signals.}}{5}{}}
+\newlabel{fig:triangle}{{6}{5}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Several sin functions generated using the combination of PWM and a Low Pass Filter. The frequency was varied with the same method as in the triangle function case.}}{5}{}}
+\newlabel{fig:sin}{{7}{5}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The amplitude of the output sin wave plotted with respect to the frequency. We see the typical attenuation curve we expect from a low pass filter. Cut-off frequency (for $R=1\,\text  {k}\Omega $ and $C=10\,\mu \text  {F}$) is marked by the vertical line.}}{5}{}}
 \newlabel{fig:attenuation}{{8}{5}{}{}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Table of time delay correction values for function generation using the DAC. $N$ is the number of steps in the function cycle, and $t_c$ is the time correction subtracted from the delay in each step.}}{5}{}}
 \newlabel{tab:delayCorrection}{{I}{5}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The time correction values from table \ref {tab:delayCorrection} and a least squares exponential fit. This function could then be used to define a time correction for any given number of steps.}}{5}{}}
-\newlabel{fig:delayCorrection}{{9}{5}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {III}555 Timer}{5}{}}
 \citation{555Modes}
 \citation{555Modes}
@@ -70,19 +68,16 @@
 \citation{ucd}
 \citation{tina}
 \citation{tina}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The time correction values from table \ref {tab:delayCorrection} and a least squares exponential fit. This function could then be used to define a time correction for any given number of steps.}}{6}{}}
+\newlabel{fig:delayCorrection}{{9}{6}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces A pin diagram for the 555 timing IC \cite  {horowitz}. Note, pin 5: Control Voltage is excluded in this diagram.}}{6}{}}
 \newlabel{fig:555}{{10}{6}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A}555 Timer as an Astable Oscillator}{6}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Simulations}{6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces The configuration of resistors and capacitors required for the 555 to operate in astable mode \cite  {555Modes}.}}{6}{}}
 \newlabel{fig:astable}{{11}{6}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Circuit Construction}{6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Simulations}{6}{}}
 \citation{ortec}
 \citation{horowitz,muons}
-\citation{ortec}
-\citation{ortec}
-\citation{ortec}
-\citation{ortec}
 \citation{ortec}
 \citation{ortec}
 \citation{ortec}
@@ -90,26 +85,30 @@
 \newlabel{fig:astableTina}{{12}{7}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces How the charging and discharging of the capacitor in the figure \ref {fig:astable} circuit results in differing off and on pulse widths.}}{7}{}}
 \newlabel{fig:astableCapacitor}{{13}{7}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Circuit Construction}{7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {B}Designing a Time-To-Amplitude Converter utilising the 555 Timer}{7}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Theory}{7}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Bistable 555 Timer}{7}{}}
-\citation{horowitz}
-\citation{horowitz}
+\citation{ortec}
+\citation{ortec}
+\citation{ortec}
+\citation{ortec}
 \@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces The 555 timer in astable mode can be set up using a potentiometer to vary the speed of charging relative to discharging of the capacitor, enabling dynamic PWM \cite  {ucd}.}}{8}{}}
 \newlabel{fig:potentiometer}{{14}{8}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Tina simulations of varying the capacitance in an astable oscillator circuit, see figure \ref {fig:potentiometer}.}}{8}{}}
 \newlabel{fig:potentiometerFrequency}{{15}{8}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Tina simulations of varying the charging to discharging rates via a potentiometer in an astable oscillator circuit, see figure \ref {fig:potentiometer}. We see a linear mapping of potentiometer value to duty.}}{8}{}}
 \newlabel{fig:potentiometerDuty}{{16}{8}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Integrating Op Amp}{8}{}}
-\newlabel{eq:integrator}{{12}{8}{}{}{}}
-\bibdata{aps_reportNotes,aps_references}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Bistable 555 Timer}{8}{}}
+\citation{horowitz}
+\citation{horowitz}
 \@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces A simplified example of a TAC circuit \cite  {ortec}. Note that toggle switches have been included for simplicity, and TAC circuits generally use transistors as switches for such actions \cite  {ortec}.}}{9}{}}
 \newlabel{fig:tacManual}{{17}{9}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4}Monostable 555 Timer}{9}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5}Configuration}{9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces A full circuit diagram for the TAC simulation in Tina.}}{10}{}}
-\newlabel{fig:tac}{{18}{10}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces A full circuit diagram for the TAC simulation in Tina.}}{9}{}}
+\newlabel{fig:tac}{{18}{9}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Integrating Op Amp}{9}{}}
+\newlabel{eq:integrator}{{12}{9}{}{}{}}
+\citation{555Modes}
+\bibdata{aps_reportNotes,aps_references}
 \bibcite{barr}{{1}{}{{}}{{}}}
 \bibcite{ucd}{{2}{}{{}}{{}}}
 \bibcite{radioworld}{{3}{}{{}}{{}}}
@@ -117,6 +116,11 @@
 \bibcite{micropython}{{5}{}{{}}{{}}}
 \bibcite{potter_2014}{{6}{}{{}}{{}}}
 \bibcite{refresh}{{7}{}{{}}{{}}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4}Monostable 555 Timer}{10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5}Testing}{10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6}Configuration}{10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Conclusions}{10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}References}{10}{}}
 \bibcite{maes_2021}{{8}{}{{}}{{}}}
 \bibcite{horowitz}{{9}{}{{}}{{}}}
 \bibcite{unityGain}{{10}{}{{}}{{}}}
@@ -124,7 +128,6 @@
 \bibcite{tina}{{12}{}{{}}{{}}}
 \bibcite{ortec}{{13}{}{{}}{{}}}
 \bibcite{muons}{{14}{}{{}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {}References}{11}{}}
 \newlabel{LastBibItem}{{14}{11}{}{}{}}
 \@writefile{toc}{\appendix }
 \@writefile{toc}{\contentsline {section}{\numberline {A}Pi Pico Pin Diagram}{12}{}}
@@ -132,6 +135,6 @@
 \@writefile{toc}{\contentsline {section}{\numberline {C}Function Generator Script}{14}{}}
 \bibstyle{unsrt}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\@writefile{toc}{\contentsline {section}{\numberline {D}Python Notebook}{17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Python Analysis Notebooks}{17}{}}
 \newlabel{LastPage}{{}{17}{}{}{}}
 \gdef \@abspage@last{17}

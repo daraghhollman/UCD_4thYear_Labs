@@ -73,7 +73,7 @@
              %  but any date may be explicitly specified
 
 \begin{abstract}
-    Lorem ipsum, dolar sit amet...
+The aims of this report were to explore pulse width modulation (PWM) and its applications through the simulation and construction of several example circuits. These included brightness variations of an LED, a simple digital-to-analogue converter. The 555 timer was also investigated both in PWM and in its application in a time-to-amplitude converter circuit. We attempted to construct this circuit physically, but encountered issues with op-amp integration which could not be resolved due to time constraints.
 \end{abstract}
 
 \maketitle
@@ -145,7 +145,7 @@ In this section, we first verify the PWM generation from the Pi Pico behaves as 
         \frac{t}{RC} &= - \ln(0.475)\nonumber\\
         RC = \frac{t}{0.744} &= 3.36 \times 10^{-5} \,\text{s}
     \end{align}
-    While any combination of resistance and capacitance with $RC \ge 3.36 \times 10^-5 \,\text{s}$ will achieve this, we selected a combination of $R=680\,\Omega$ and $C=1\,\mu\text{F}$, yielding $RC=6.8\times 10^{-4}$ was chosen based on the components available. This output was verified to have less than 5\% variance using the oscilloscope and the results were plotted in figure \ref{fig:dacVariations}.\\
+    While any combination of resistance and capacitance with $RC \ge 3.36 \times 10^{-5} \,\text{s}$ will achieve this, we selected a combination of $R=680\,\Omega$ and $C=1\,\mu\text{F}$, yielding $RC=6.8\times 10^{-4}\,\text{s}$ was chosen based on the components available. This output was verified to have less than 5\% variance using the oscilloscope and the results were plotted in figure \ref{fig:dacVariations}.\\
 
     It is important that this circuit not be used unbuffered. The output signal from the DAC circuit when connected to another circuit will affect the total resistance of the DAC circuit. The change in RC will cause the cut-off frequency to change, producing an unwanted response from the DAC. This can be amended using a unity gain op-amp to buffer the output signal. A unity gain op-amp is an op-amp circuit which has a voltage gain of 1, meaning the input and output signals are equal voltage \cite{unityGain}. However, one useful property of op-amps for this application is that they typically have very high impedence, and hence, will not draw a significant current from the DAC circuit. The total resistance and hence the RC value will remain unchanged \cite{unityGain}.
 
@@ -191,7 +191,7 @@ In this section, we first verify the PWM generation from the Pi Pico behaves as 
         Sine wave signals were generated similarly, through the use of the following function:
         \begin{equation}
             S(i) = \frac{1}{2}\left(\sin\left(2\pi\frac{i}{N}\right) + 1\right)
-        \end{equation}with a frequency set similarly using a delay per time step. Sin functions for frequencies ranging between $10\,\text{Hz}$ and $100\,\text{Hz}$ were plotted in figure \ref{fig:sin}. We notice how the amplitude of each sin wave decreases as the frequency increases, and attempting to generate higher frequency sine waves results in large attenuation. This is expected behaviour, as we expect the low pass filter to attenuate high frequency changes in the input signal. 10 sin waves were generated with frequencies between $1\,\text{Hz}$ to $1\,\text{kHz}$. The amplitude of each sine wave was determined by subtracting the mean value of each wave from the maximum. These values were plotted against their frequency in decibels with respect to the voltage output of the Pi Pico ($3.3\,\text{V}$). See figure \ref{fig:attenuation}. We see the expected response from the low pass filter, with rapid attenuation after the cut-off frequency. This frequency was $f_c = 15.915$ and is plotted as an orange vertical line through the data. Where it intersects the data is approximately $-1\,\text{dB}$, far from the expected value of $-3\,\text{dB}$. It is clear that the actual cut-off frequency of this circuit must be higher than calculated, likely due to the use of an unbuffered output as discussed previously. However, it is hence obvious why high frequency sin waves are being attenuated with this RC configuration.
+        \end{equation}with a frequency set similarly using a delay per time step. Sin functions for frequencies ranging between $10\,\text{Hz}$ and $100\,\text{Hz}$ were plotted in figure \ref{fig:sin}. We notice how the amplitude of each sin wave decreases as the frequency increases, and attempting to generate higher frequency sine waves results in large attenuation. This is expected behaviour, as we expect the low pass filter to attenuate high frequency changes in the input signal. 10 sin waves were generated with frequencies between $1\,\text{Hz}$ to $1\,\text{kHz}$. The amplitude of each sine wave was determined by subtracting the mean value of each wave from the maximum. These values were plotted against their frequency in decibels with respect to the voltage output of the Pi Pico ($3.3\,\text{V}$). See figure \ref{fig:attenuation}. We see the expected response from the low pass filter, with rapid attenuation after the cut-off frequency. This frequency was $f_c = 15.915 \,\text{Hz}$ and is plotted as an orange vertical line through the data. Where it intersects the data is approximately $-1\,\text{dB}$, far from the expected value of $-3\,\text{dB}$. It is clear that the actual cut-off frequency of this circuit must be higher than calculated, potentially due to the use of an unbuffered output affecting the resistance as discussed previously. Tolerance on the components could also play a role but cannot account for the full discrepancy. However regardless, it becomes obvious why high frequency sin waves are being attenuated with this RC configuration.
 
         \begin{figure}
             \includegraphics[width=0.9\columnwidth]{Images/attenuation.png}
@@ -299,6 +299,11 @@ The 555 Timer is a popular integrated circuit chip for timing, a pin diagram is 
             \includegraphics[width=1.8\columnwidth]{Images/tacManual}
             \caption{\label{fig:tacManual}A simplified example of a TAC circuit \cite{ortec}. Note that toggle switches have been included for simplicity, and TAC circuits generally use transistors as switches for such actions \cite{ortec}.}
         \end{figure*}
+        
+        \begin{figure*}
+            \includegraphics[width=2\columnwidth]{Images/tac}
+            \caption{\label{fig:tac}A full circuit diagram for the TAC simulation in Tina.}
+        \end{figure*}
 
         While a simple representation, some of these components - namely the constant current source - are non-trivial to construct in a undergraduate lab environment. However, it should also be possible to recreate the functionality of this circuit (at least as a proof of concept) using a bistable 555 timer and an integrating op-amp.
 
@@ -319,23 +324,20 @@ The 555 Timer is a popular integrated circuit chip for timing, a pin diagram is 
 
         The circuit as a whole then works in the following way. The start pulse arrives and grounds the trigger pin causing the output of the bistable 555 to go high. As a result, the input of the op-amp integrator is high and the capacitor starts charging as the op-amp integrates the 555 signal. When a stop signal arrives, the monostable 555 is reset and the output goes to off. The op-amp stops integrating further and a fixed with output pulse is created by the monostable 555, with amplitude proportional to the capacitor voltage, and hence, proportional to the time between the stop and start signals.\\ 
 
+        \subsubsection{Testing}
+
         The circuit was simulated using Tina and some unexpected behaviour occurred. Unwanted capacitor charging and discharging was occurring in the Tina simulations of the circuit. A diode was included between the bistable 555 output and the integrator input to ensure no discharging could occur back through the 555. Other diode positions were tried with respect to the integrator but this position yielded expected output. A voltage inverter was used after the integrator. As shown in equation \ref{eq:integrator}, the voltage output from the integrator is negative with respect to the input, and hence must be inverted to restore a positive voltage signal passed to the monostable 555. The circuit was difficult to demonstrate using Tina as - shown in figure \ref{fig:tac} - push buttons were used to generate start and stop signals and hard to create consistency in inputs. Larger $R$ and $C$ values were used to slow the integration time to measure these longer time intervals.\\
 
-        We attempted to construct this circuit physically but unfortunately could not get it functional for manual signal inputs. The integrator output remained at $\approx0\,\text{V}$ regardless of bistable 555 input.
-
+        We attempted to construct this circuit physically but unfortunately could not get it functional for manual signal inputs. The bistable 555 timer and transistor switches were implemented and functional, however, adding the integrating op-amp to the circuit proved non-trivial. Despite trying many configurations and thorough troubleshooting (limited due to time constraints) the integrator output remained at $\approx0\,\text{V}$ regardless of bistable 555 input.\\
 
         \subsubsection{Configuration}
-        How different output pulse widths could be selected. How to choose component values to map the time difference to an amplitude.
+        Should the circuit have worked as expected, several steps would need to taken to convert from a simple proof of concept to a practical device. Primarily, component values must be selected to map integration time to a chosen range of times - i.e. the millisecond range, or microsecond range - for a given amplitude range. The output pulse generation method we use restricts the integrated voltage between $5\,\text{V}$ and $15\,\text{V}$ due to limits on the 555 timer \cite{555Modes}. This can be done through the use of equation \ref{eq:integrator} as the voltage output of the integrator is inversely proportional to the RC value. The $V_\text{cc}$ voltage of the bistable 555 also plays a roll in the speed of integration. Other useful functionality would be in the adjustment of the output pulse, specifically its width. This could be varied by switching resistance values in the monostable 555 circuit.\\
 
-            
-            \begin{figure*}
-                \includegraphics[width=2\columnwidth]{Images/tac}
-                \caption{\label{fig:tac}A full circuit diagram for the TAC simulation in Tina.}
-            \end{figure*}
+\section{Conclusions}
+
+Pulse width modulation and its applications were investigated and explored through the use of several examples including brightness variations of an LED, a simple digital-to-analogue converter, and the 555 timer. We also showed an example application for the 555 timer in a time-to-amplitude converter circuit. This circuit is explained in detail along with steps for configuration, and was simulated using the Tina circuit simulator. We attempted to construct this circuit physically, but encountered issues with the op-amp integrator and could not resolve them due to time constraints.
     
 
-
-\clearpage
 \bibliographystyle{unsrt}
 \bibliography{aps_references}% Produces the bibliography via BibTeX
 
@@ -364,9 +366,9 @@ The 555 Timer is a popular integrated circuit chip for timing, a pin diagram is 
         \includegraphics[width=\columnwidth,page=2]{Images/functionGenerator.pdf}
     \end{figure}
 
-
 \clearpage
-\section{Python Notebook}
+\section{Python Analysis Notebooks}
+    
 
 \end{document}
 %
